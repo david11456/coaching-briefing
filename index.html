@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaching-App Briefing</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html { scroll-behavior: smooth; }
+
+  .tab-btn {
+    white-space: nowrap; padding: 0.375rem 1rem; border-radius: 0.375rem;
+    font-size: 0.875rem; font-weight: 500; border: 1px solid #e2e8f0;
+    color: #475569; background: white; cursor: pointer; transition: all 0.15s;
+  }
+  .tab-btn:hover:not(.active) { background: #f8fafc; }
+  .tab-btn.active { background: #4f46e5; color: white; border-color: #4f46e5; }
+
+  .snav-a {
+    white-space: nowrap; font-size: 0.8125rem; color: #64748b;
+    padding: 0.5rem 0; border-bottom: 2px solid transparent;
+    cursor: pointer; text-decoration: none; transition: color 0.15s, border-color 0.15s;
+    display: inline-block;
+  }
+  .snav-a:hover { color: #4f46e5; }
+  .snav-a.active { color: #4f46e5; border-bottom-color: #4f46e5; }
+
+  .card { break-inside: avoid; page-break-inside: avoid; }
+
+  @media print {
+    .no-print { display: none !important; }
+    body { background: white !important; font-size: 10pt; }
+    #mainContent { padding: 0 !important; max-width: 100% !important; }
+    .card { box-shadow: none !important; border: 1px solid #e2e8f0 !important; margin-bottom: 0.5rem; }
+    section { break-before: page; page-break-before: always; }
+    section:first-child { break-before: auto; page-break-before: auto; }
+    a { color: #1e293b !important; text-decoration: none !important; }
+    .grid { display: block !important; }
+    .grid > * { margin-bottom: 0.75rem; }
+    h2 { font-size: 13pt !important; }
+  }
+</style>
+</head>
+<body class="bg-stone-50 text-slate-800 min-h-screen">
+
+<!-- ══════════════════════ HEADER ══════════════════════ -->
+<header class="bg-white shadow-sm no-print" style="position:sticky;top:0;z-index:50">
+  <div style="max-width:76rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between">
+    <div>
+      <span style="font-size:1.125rem;font-weight:700;color:#0f172a">Coaching-App Briefing</span>
+      <span style="font-size:0.8125rem;color:#94a3b8;margin-left:0.75rem" class="hidden sm:inline">Strategisches Monatsbriefing · DACH &amp; Global</span>
+    </div>
+    <button id="copyBtn" onclick="copyLink()"
+      style="display:flex;align-items:center;gap:0.375rem;font-size:0.875rem;padding:0.375rem 0.875rem;border-radius:0.375rem;border:1px solid #e2e8f0;color:#475569;background:white;cursor:pointer;transition:background 0.15s"
+      onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      Link kopieren
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════════ TAB BAR ══════════════════════ -->
+<div class="bg-white border-b border-slate-200 no-print" style="position:sticky;top:4rem;z-index:40">
+  <div id="tabBar" style="max-width:76rem;margin:0 auto;padding:0.5rem 1.5rem;display:flex;overflow-x:auto;gap:0.375rem"></div>
+</div>
+
+<!-- ══════════════════════ SUB NAV ══════════════════════ -->
+<div class="bg-white border-b border-slate-100 no-print" style="position:sticky;top:6.75rem;z-index:30">
+  <div id="subNav" style="max-width:76rem;margin:0 auto;padding:0 1.5rem;display:flex;overflow-x:auto;gap:1.5rem"></div>
+</div>
+
+<!-- ══════════════════════ MAIN ══════════════════════ -->
+<main id="mainContent" style="max-width:76rem;margin:0 auto;padding:2rem 1.5rem 4rem"></main>
+
+<script>
+// ════════════════════════════════════════════════════════
+//  DATA
+// ════════════════════════════════════════════════════════
+const briefings = {
+  "2026-04": {
+    label: "April 2026",
+    sections: {
+
+      // ── 1. MARKT & NACHFRAGE ──────────────────────────
+      market: [
+        {
+          title: "Coaching-Plattformmarkt 2026: $4,22 Mrd., CAGR 11 % bis 2036",
+          url: "https://www.futuremarketinsights.com/reports/coaching-platform-market",
+          source: "Future Market Insights",
+          date: "2026-03",
+          tag: "Markt",
+          relevance: 3,
+          summary: "Der globale Markt für digitale Coaching-Plattformen wird 2026 auf 4,22 Mrd. USD geschätzt und wächst mit 11 % CAGR auf 12,01 Mrd. USD bis 2036. Treiber: steigende Enterprise-Nachfrage nach Führungskräfteentwicklung, Remote-Work-Normalisierung und KI-Integration.",
+          implication: "B2B-Kanal wächst strukturell schneller als B2C – klarer Auftrag, Enterprise-Readiness (DSGVO, HRIS-Integration, ROI-Reporting) als strategischen Differenziator zu entwickeln."
+        },
+        {
+          title: "ICF 2026: 122.974 Coaches weltweit – +54 % in sechs Jahren, Gesamtmarkt ~$5,34 Mrd.",
+          url: "https://entrepreneurshq.com/coaching-industry-statistics/",
+          source: "EntrepreneursHQ / ICF Data",
+          date: "2026-01",
+          tag: "Markt",
+          relevance: 2,
+          summary: "Der globale Coaching-Markt erreicht 2026 rund 5,34 Mrd. USD. Zahl ICF-zertifizierter Coaches um 54 % in sechs Jahren gestiegen. Executive-Coaching-Segment allein soll 2026 auf 1,2 Mrd. USD kommen.",
+          implication: "Stark wachsendes Coach-Angebot erhöht Erwartungen an App-basiertes Coaching: Ohne klare Evidenzbasis und Methoden-Transparenz verlieren wir Glaubwürdigkeit gegenüber Human-Coaching."
+        },
+        {
+          title: "TalentLMS L&D-Report 2026: 63 % erwarten stabiles oder wachsendes Budget – Führungsentwicklung +13,3 %",
+          url: "https://www.talentlms.com/research/learning-development-report-2026",
+          source: "TalentLMS",
+          date: "2026-01",
+          tag: "Markt",
+          relevance: 3,
+          summary: "63 % der L&D-Verantwortlichen erwarten 2026 ein stabiles oder wachsendes Budget. Führungskräfteentwicklung soll um 13,3 % zulegen, Gesamttraining-Spending um 11,7 %. Budget-Zufriedenheit stieg von 61 % (2022) auf 76 % (2025).",
+          implication: "HR-Budgets für Coaching sind robust – eine DACH-fokussierte B2B-Pilotpartnerschaft ist jetzt taktisch gut timed."
+        },
+        {
+          title: "Gen Z: 42 % in Therapie (+22 % seit 2022), 77 % betreiben Selbsthilfe – digitale Nachfrage wächst strukturell",
+          url: "https://www.harmonyhit.com/state-of-gen-z-mental-health/",
+          source: "Harmony Healthcare IT",
+          date: "2025-12",
+          tag: "Markt",
+          relevance: 3,
+          summary: "Survey 2025: 42 % der Gen Z (18–28) sind aktuell in Therapie – ein Anstieg von 22 % seit 2022. 77 % betreiben aktiv Selbsthilfe (Bücher, Journaling, Apps). 56 % priorisieren Fitness sehr stark. Gen Z erwartet Personalisierung, KI-Empfehlungen und Community-Elemente.",
+          implication: "Gen Z ist unsere primäre B2C-Zielgruppe: therapieerfahren, reflexionsbereit, Social-Media-geprägte UX-Erwartungen. Unsere SDT/Werte-fundierte Tiefe braucht eine niederschwellige, mobiloptimierte Oberfläche."
+        },
+        {
+          title: "Corporate Wellbeing wird C-Suite-Strategie: CEOs messen an Retention und Produktivität – Design ist das Problem",
+          url: "https://wellhub.com/en-us/blog/wellness-and-benefits-programs/corporate-wellness-trends/",
+          source: "Wellhub Corporate Wellness Trends 2026",
+          date: "2026-01",
+          tag: "Markt",
+          relevance: 2,
+          summary: "Wellhub-Report 2026: Wellbeing ist kein HR-Benefit mehr, sondern C-Suite-Strategie mit messbaren KPIs. Trotz steigender Budgets bewerten nur 33 % der Mitarbeitenden ihr Wohlbefinden positiv – nicht Ressourcenmangel, sondern Designversagen ist das Problem.",
+          implication: "Wenn Wellbeing-Programme Impact nachweisen müssen, sind wir als evidenzbasierte Coaching-App gut positioniert – sofern wir B2B-Impact-Metriken klar kommunizieren."
+        }
+      ],
+
+      // ── 2. NUTZERVERHALTEN & BEDÜRFNISSE ─────────────
+      userNeeds: [
+        {
+          title: "Mental-Health-App-Retention: Median 30 Tage nur 3,3 % – Peer-Support-Apps mit 8,9 % am stärksten",
+          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6785720/",
+          source: "Journal of Medical Internet Research / PMC",
+          date: "Systematische Analyse",
+          tag: "Studie",
+          relevance: 3,
+          summary: "Analyse realer Nutzungsdaten: Median-Retention bei Mental-Health-Apps beträgt nach 30 Tagen nur 3,3 %. Peer-Support-Apps erzielen mit 8,9 % die höchsten Werte, Atemübungs-Apps liegen bei 0 %. Täglich aktive Nutzer machen im Schnitt 4 % der Gesamtnutzer aus.",
+          implication: "Unsere Ich-Landkarte und Themenarbeit-Architektur müssen auf intrinsisch motivierte Wiederkehr ausgelegt sein. SDT-Autonomieunterstützung ist der entscheidende Retention-Hebel, nicht Gamification allein."
+        },
+        {
+          title: "Engagement–Outcome-Link: Abgeschlossene Aktivitäten sind stärkster Prädiktor für klinische Verbesserung",
+          url: "https://www.sciencedirect.com/science/article/pii/S0165178125005098",
+          source: "Journal of Psychiatry Research / ScienceDirect",
+          date: "2025",
+          tag: "Meta-Analyse",
+          relevance: 3,
+          summary: "Systematisches Review mit Meta-Analyse: Abgeschlossene Aktivitäten und Tasks sind der konsistenteste Prädiktor für Symptomverbesserung bei Depression und sozialer Angst – stärker als Login-Frequenz oder Sitzungslänge.",
+          implication: "Klare, abschließbare Einheiten in unserer Architektur bauen. Die Ich-Landkarte als visueller Fortschritts-Spiegel kann diesen Abschlussmoment-Effekt gezielt nutzen."
+        },
+        {
+          title: "Personalisierte Mental-Health-Apps: Systematisches Review – Personalisierung steigert Adhärenz signifikant",
+          url: "https://www.tandfonline.com/doi/full/10.1080/15228835.2025.2491347?af=R",
+          source: "Journal of Technology in Human Services (Taylor & Francis, Open Access)",
+          date: "2025",
+          tag: "Review",
+          relevance: 2,
+          summary: "27 Studien: Adaptierte Inhalte, individuelles Feedback und Nutzerpräferenzen erhöhen Adhärenz und Zufriedenheit konsistent. Kritik: Kaum RCTs mit ausreichender Power für Wirksamkeitsnachweise.",
+          implication: "Echte Personalisierung über Werte und Stärken (SDT/Schwartz/VIA) ist wissenschaftlich relevanter Differenziator gegenüber oberflächlichem Profil-Customizing."
+        },
+        {
+          title: "Gen Z Digital Health 2026: Personalisierung, KI-Insights und Community als Top-Anforderungen",
+          url: "https://www.pragmaticcoders.com/blog/gen-z-healthcare-app",
+          source: "Pragmatic Coders",
+          date: "2026-01",
+          tag: "Markt",
+          relevance: 2,
+          summary: "Gen Z erwartet Health-Apps mit Social-Media-Qualität: sofortige Verfügbarkeit, Gamification, KI-Empfehlungen und Community. 32 % suchen aktiv Apps mit Screen-Time-Limits – bewusster Medienkonsum als wachsendes Bedürfnis."
+        },
+        {
+          title: "Digital Fatigue bei Gen Z 2026: Mehr Apps, aber sinkende Zufriedenheit",
+          url: "https://nchstats.com/digital-fatigue-crisis-gen-z/",
+          source: "NCH Stats",
+          date: "2026",
+          tag: "Markt",
+          relevance: 2,
+          summary: "Trotz wachsender App-Nutzung berichten Gen-Z-Nutzer zunehmend von digitaler Überforderung. Anzahl genutzter Wellbeing-Apps steigt, aber Zufriedenheit sinkt. Nutzer wünschen weniger, aber wirksamere digitale Kontaktpunkte.",
+          implication: "Weniger ist mehr: Unsere Architektur sollte bewusst auf Tiefe statt Breite setzen. Selektivität ist ein Vorteil gegenüber Feature-überladenen Wettbewerbern."
+        }
+      ],
+
+      // ── 3. WISSENSCHAFT & EVIDENZ ────────────────────
+      science: [
+        {
+          title: "IFS PARTS-Programm: Erster RCT einer Online-Gruppen-IFS-Intervention für PTSD (RCT, N=60)",
+          url: "https://www.foundationifs.org/about/news/268-another-foundation-funded-study-published-randomized-controlled-trial-on-the-effects-of-the-ifs-focused-program-for-alleviating-and-resolving-trauma-and-stress-parts",
+          source: "Foundation IFS / Psychological Trauma (APA)",
+          date: "2026-03",
+          tag: "RCT",
+          relevance: 3,
+          summary: "Erster RCT (N=60, je 30 pro Arm) zum IFS-basierten PARTS-Programm für PTSD in Online-Gruppenformat. PARTS-Arm: signifikant höhere Sitzungsteilnahme (12,8 vs. 10 Sessions) und höhere Gruppenzufriedenheit vs. NBSR-T-Kontrollarm. Publikation in APA-Fachzeitschrift Psychological Trauma.",
+          implication: "Unser IFS/Inner-Parts-Theorierahmen gewinnt erstmalig RCT-Evidenz. Starkes Argument gegenüber B2B-Einkäufern und für die wissenschaftliche Legitimation unserer Architektur."
+        },
+        {
+          title: "Meta-Analyse: App-Chatbots reduzieren Depression (g=0,31) und Angst (g=0,28) signifikant (38 Studien, n=7.401)",
+          url: "https://www.nature.com/articles/s41746-026-02566-w",
+          source: "npj Digital Medicine (Nature, Open Access)",
+          date: "2026-03",
+          tag: "Meta-Analyse",
+          relevance: 3,
+          summary: "Umfassende Meta-Analyse (38 RCTs, n=7.401 Depression; 34 RCTs, n=7.621 Angst) belegt statistisch signifikante Symptomreduktionen durch App-basierte Chatbots. Effektgröße moderat (g≈0,30). Einschränkung: hohe Heterogenität zwischen Studien.",
+          implication: "Moderate, aber konsistente Effekte legitimieren App-basierte Ansätze. Wir sollten mittelfristig eigene Effektdaten erheben, um uns über diesem Benchmark zu positionieren."
+        },
+        {
+          title: "SDT in Behavior-Change-Technologien: Nur 15 von 76 Studien wenden SDT explizit an – massive Theorie-Lücke",
+          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12685826/",
+          source: "PMC Open Access",
+          date: "2026",
+          tag: "Review",
+          relevance: 3,
+          summary: "Systematisches Review: Trotz breiter SDT-Rezeption wenden nur 15/76 Studien die Theorie explizit an. Häufige Konfundierung von Konstrukten, Fokus meist nur auf intrinsische Motivation – Kompetenz und Zugehörigkeit vernachlässigt. Empfehlung: alle drei Grundbedürfnisse gezielt adressieren.",
+          implication: "Wir können uns explizit als SDT-konsequent positionieren – Wettbewerber nutzen SDT meist nur oberflächlich. Kompetenz (Fortschritts-Feedback) und Zugehörigkeit (Community, Peer) systematisch in die Architektur integrieren."
+        },
+        {
+          title: "Technology-Enabled Coaching RWE: Zertifizierte Non-Therapeuten erzielen 22 % Depression- und 12 % Angstreduktion",
+          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628405/",
+          source: "Administration and Policy in Mental Health (Springer / PMC)",
+          date: "2025",
+          tag: "Studie",
+          relevance: 2,
+          summary: "Real-World-Evidence-Studie: Zertifizierte Coaches ohne klinische Lizenz erzielen über digitale Plattformen klinisch relevante Verbesserungen (22 % Depressionssymptomreduktion, 12 % Angstreduktion). Observational-Design, Stichprobengröße nicht explizit berichtet.",
+          implication: "Diese Evidenz stützt unser nicht-klinisches Coaching-Modell direkt. Eskalationspfade (Safe Messaging, Krisenhinweis) klar definieren, da Regulierung hier strenger wird."
+        },
+        {
+          title: "SHAPE-Studie: Kognitive Therapie-Coaching für PTSD/Depression bei Healthcare-Workers (Nature Scientific Reports)",
+          url: "https://www.nature.com/articles/s41598-026-36057-5",
+          source: "Nature Scientific Reports (Open Access)",
+          date: "2026",
+          tag: "Studie",
+          relevance: 2,
+          summary: "Die SHAPE-Studie evaluiert ein Cognitive-Therapy-Coaching-Programm für Gesundheitspersonal mit wiederholter Trauma-Exposition. Ergebnis: Signifikante Symptomreduktion bei PTSD und Depression. Das Programm kombiniert kognitive Umstrukturierung mit Coaching-Prinzipien in niederschwelligem Format.",
+          implication: "Healthcare Workers als B2B-Segment ist wissenschaftlich gut belegt – relevant für DACH-Expansion, wo Belastungsniveau im Gesundheitsbereich post-COVID hoch bleibt."
+        },
+        {
+          title: "SDT in Rückkehr-zur-Arbeit-Programmen: Scoping Review – Bedürfnissatisfaktion korreliert mit nachhaltigerer Reintegration",
+          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12640594/",
+          source: "PMC Open Access",
+          date: "2026",
+          tag: "Review",
+          relevance: 1,
+          summary: "Scoping Review: Höhere Satisfaction der SDT-Grundbedürfnisse korreliert mit kürzerer Abwesenheitszeit und stabilerem Berufsverbleib nach Burnout/Krankheit. Beleuchtet SDT im betrieblichen Reintegrations-Kontext."
+        }
+      ],
+
+      // ── 4. KI & TECHNOLOGIE ──────────────────────────
+      ai: [
+        {
+          title: "AI Agents in Mental Health: Systematisches Review & Meta-Analyse (medRxiv Preprint, 21. April 2026)",
+          url: "https://www.medrxiv.org/content/10.64898/2026.04.21.26351365v1.full",
+          source: "medRxiv (Preprint, Open Access)",
+          date: "2026-04-21",
+          tag: "Meta-Analyse",
+          relevance: 3,
+          summary: "Bisher umfassendstes Review zu KI-Agenten in der psychischen Gesundheitsversorgung (April 2026). LLMs als Assessment-, Triaging- und Therapie-Unterstützungsagenten analysiert. Befund: Schwerpunkt auf Depression, Angst, Suizidalität – kaum schwere Erkrankungen. Kritik: heterogene Designs, dünne klinische Evidenz.",
+          implication: "Coaching (unterhalb Therapieschwelle) mit LLM-Unterstützung ist wissenschaftlich belastbar – wenn wir bei klaren Indikationsgrenzen bleiben und Eskalations-Flows implementieren."
+        },
+        {
+          title: "JMIR AI Review: LLM-Chatbots für Beratung vielversprechend – aber inkonsistente Sicherheitsgovernance",
+          url: "https://ai.jmir.org/2026/1/e80348",
+          source: "JMIR AI (Open Access)",
+          date: "2026-03",
+          tag: "Review",
+          relevance: 3,
+          summary: "Systematisches Review: 45 % aller neuen MH-Chatbot-Studien 2024 LLM-basiert, aber nur 16 % klinisch getestet. Vielversprechende Skalierungsmöglichkeiten, aber heterogene Designs, minimale externe Validierung, inkonsistentes Sicherheits-Reporting.",
+          implication: "Unsere Sicherheitsarchitektur (Krisendetektions-Flow, Safe-Messaging) proaktiv dokumentieren und kommunizieren – das wird zum echten Differenzierungsmerkmal gegenüber nicht-transparenten KI-Tools."
+        },
+        {
+          title: "Stanford HAI: Bloom/Beebo AI Health Coaching gewinnt Best Paper Award auf ACM CHI 2026",
+          url: "https://hai.stanford.edu/news/an-ai-health-coach-could-change-your-mindset",
+          source: "Stanford HAI",
+          date: "2026-04",
+          tag: "Studie",
+          relevance: 3,
+          summary: "Stanford-Forscher entwickelten Bloom, einen LLM-basierten Health-Coach (Beebo), der nach Zielen fragt, Empathie und Lob bietet, Wochenpläne vorschlägt und sich im Dialog anpasst. Best Paper Award ACM CHI 2026. Kern: iterativer Empathie-Loop mit Aufgabenunterstützung.",
+          implication: "Der akademische Goldstandard für KI-Coaching wird öffentlich dokumentiert. Unsere Architektur sollte vergleichbare Empathie- und Ziel-Loops aufweisen."
+        },
+        {
+          title: "LLM-Evolution in MH-Forschung: 45 % aller neuen Studien LLM-basiert, nur 16 % klinisch validiert",
+          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12434366/",
+          source: "PMC Systematic Review",
+          date: "2025-10",
+          tag: "Review",
+          relevance: 2,
+          summary: "Review: 2024 waren 45 % aller neuen MH-Chatbot-Studien LLM-basiert – massiver Sprung gegenüber 2023. Aber nur 16 % mit klinischer Effektivitätsprüfung, die meisten in frühen Validierungsphasen.",
+          implication: "Schneller Markt, langsame Wissenschaft. Kurzfristige Chance, mittelfristiges Regulierungsrisiko. Internes Outcome-Tracking jetzt priorisieren."
+        },
+        {
+          title: "Headspace Ebb: Voice Mode + Enhanced Memory – Rollout UK Q1 2026, kontinuierliche emotionale Begleitung",
+          url: "https://www.businesswire.com/news/home/20251208896917/en/Headspace-Rolls-out-Voice-Feature-for-Empathetic-AI-Companion-Ebb",
+          source: "BusinessWire / Headspace",
+          date: "2025-12",
+          tag: "Produkt",
+          relevance: 2,
+          summary: "Headspace führt für KI-Begleiter Ebb Voice Mode (Sprechen statt Tippen) und Enhanced Memory (persistentes Gedächtnis vergangener Gespräche) ein. Rollout USA, UK, CA, AU – weitere Märkte 2026 geplant.",
+          implication: "Voice + persistentes Gedächtnis werden zum Branchen-Standard. Besonders Memory ist für unsere Ich-Landkarte architektonisch relevant – Roadmap-Priorisierung prüfen."
+        },
+        {
+          title: "JMIR Formative 2026: Reale KI-Companion-Nutzung weicht stark von Studienbefunden ab",
+          url: "https://formative.jmir.org/2026/1/e86904",
+          source: "JMIR Formative Research (Open Access)",
+          date: "2026",
+          tag: "Studie",
+          relevance: 1,
+          summary: "Multiple-Methods-Studie zur realen Nutzung eines KI-Begleiters: Motivation zur Anmeldung und tatsächliches Engagement divergieren stark. Nutzer entwickeln para-soziale Bindungen, nutzen aber nicht die intendierten Kern-Features. Re-Design der Einstiegs-Flows ist entscheidend."
+        }
+      ],
+
+      // ── 5. REGULATORIK & ETHIK ───────────────────────
+      regulation: [
+        {
+          title: "EU AI Act Omnibus VII: Hochrisiko-Frist auf Dezember 2027 verschoben – Vereinfachung beschlossen",
+          url: "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/",
+          source: "EU Council (consilium.europa.eu)",
+          date: "2026-05-07",
+          tag: "Regulierung",
+          relevance: 3,
+          summary: "Rat und Parlament einigten sich am 7. Mai 2026 auf Vereinfachung des AI Acts (Omnibus VII). Hochrisiko-KI-Systeme müssen erst ab Dezember 2027 compliant sein (statt August 2026). KMU- und Midcap-Ausnahmen ausgeweitet. Neues Verbot: KI-generierte nicht-konsensuelle sexuelle Inhalte.",
+          implication: "Verlängerung gibt Zeit für sauberen Compliance-Aufbau. Aber: Beobachtungspflicht zur Kategorisierung unserer KI bleibt – sind wir Hochrisiko oder nicht? Das sollte jetzt rechtlich geklärt werden."
+        },
+        {
+          title: "EU-Kommission: Leitlinien zu verbotenen KI-Praktiken – Coaching-Apps explizit erwähnt (April 2026)",
+          url: "https://www.epr.eu/european-commission-publishes-guidelines-on-prohibited-ai-practices/",
+          source: "European Commission / EPR",
+          date: "2026-04",
+          tag: "Regulierung",
+          relevance: 3,
+          summary: "Leitlinien zu Art. 5 AI Act erwähnen Coaching-Apps explizit: Chatbots, die Nutzer durch subliminale Techniken zu Verhaltensänderungen manipulieren, fallen unter das Manipulationsverbot. Therapeutische Chatbots dürfen kognitive Schwächen vulnerabler Personen nicht ausnutzen.",
+          implication: "Unsere Nudge-Logik, Empfehlungsalgorithmen und Motivationssprache müssen auf Kompatibilität mit dem Manipulationsverbot geprüft werden. Transparenz über KI-Entscheidungslogik wird Pflicht."
+        },
+        {
+          title: "Mental-Health-App Privacy-Studie: Alle 25 Apps enthalten undeklarierten Tracker – 48 % verschweigen KI-Drittanbieter",
+          url: "https://www.helpnetsecurity.com/2026/05/08/android-mental-health-apps-privacy-risks/",
+          source: "Help Net Security / arXiv",
+          date: "2026-05",
+          tag: "Datenschutz",
+          relevance: 3,
+          summary: "Analyse von 25 Android Mental-Health-Apps: Alle enthalten mindestens einen in der Datenschutzerklärung nicht deklarierten Tracker. 68 % deklarieren weniger als die Hälfte ihrer Tracker. 48 % referenzieren KI-Drittanbieter (OpenAI, Anthropic u.a.) nicht namentlich.",
+          implication: "Wir können Datenschutz-Transparenz als echten Differenziator nutzen: vollständige Tracker-Deklaration und explizite KI-Drittanbieter-Offenlegung als Standard setzen."
+        },
+        {
+          title: "DiGA-Verordnung 2. Änderung: Leistungsabhängige Vergütung startet 2026 – 30+ psychologische Apps im Verzeichnis",
+          url: "https://www.bfarm.de/DE/Medizinprodukte/Aufgaben/DiGA-und-DiPA/DiGA/_node.html",
+          source: "BfArM (bfarm.de)",
+          date: "2026-02-01",
+          tag: "Regulierung",
+          relevance: 2,
+          summary: "2. Änderungsverordnung zur DiGA-VO in Kraft seit 1. Februar 2026: Ab 2026 muss ein Teil der Erstattung leistungsabhängig sein. Klärung der Outcome-Messung (AbEM). Aktuell 30+ psychologische Apps im BfArM-DiGA-Verzeichnis.",
+          implication: "Für eine potenzielle DiGA-Zulassung ist Outcome-Messung von Beginn an zu integrieren – robuste Wirksamkeitsmessung muss in der Design-Phase beginnen, nicht nach Launch."
+        },
+        {
+          title: "EDPB Coordinated Enforcement 2026: Fokus auf Transparenz und Informationspflichten – relevant für App-Datenschutzerklärungen",
+          url: "https://www.edpb.europa.eu/news/news/2026/cef-2026-edpb-launches-coordinated-enforcement-action-transparency-and-information_en",
+          source: "European Data Protection Board (edpb.europa.eu)",
+          date: "2026-04",
+          tag: "Regulierung",
+          relevance: 2,
+          summary: "EDPB hat koordinierte Durchsetzungsmaßnahme 2026 gestartet: Alle EU-Datenschutzbehörden prüfen gleichzeitig DSGVO-Transparenzpflichten. Mental-Health-Apps mit sensiblen Gesundheitsdaten stehen unter besonderer Beobachtung.",
+          implication: "Datenschutzerklärung und In-App-Hinweise zu Datenverarbeitung, KI-Einsatz und Drittanbietern kurzfristig prüfen und ggf. überarbeiten."
+        }
+      ],
+
+      // ── 6. WETTBEWERB ────────────────────────────────
+      competitors: {
+        "onesome": {
+          product: [
+            {
+              title: "KI-Self-Coaching & Peer-Coaching für Organisationen – DACH-B2B-Fokus",
+              url: "https://onesome.de/die-app/",
+              source: "onesome.de",
+              date: "2026",
+              tag: "Produkt",
+              relevance: 2,
+              summary: "onesome bietet skalierbare B2B-Lösung für DACH: KI-Self-Coaching, Peer-Coaching und moderierte Gruppencoachings auf DE/EN. Themen: Werte, Konfliktkompetenz, Emotionale Intelligenz. Subscription-Modell.",
+              implication: "Direkter DACH-B2B-Wettbewerber mit ähnlichen Wertethemen. Differenzierung über Tiefe der Theoriebasis (SDT/Schwartz/VIA vs. generischer Coaching-Ansatz) ist entscheidend."
+            }
+          ],
+          business: [],
+          personal: [],
+          press: []
+        },
+        "CoachHub": {
+          product: [
+            {
+              title: "AIMY 2.0: Dynamic Self-Assessments, Teams-Nudges, erweiterte Rollenspiele, HRIS-Analytics",
+              url: "https://www.coachhub.com/news-media/coachhub-launches-ai-coach-aimy-2",
+              source: "CoachHub",
+              date: "2025-11",
+              tag: "Produkt",
+              relevance: 3,
+              summary: "AIMY 2.0 (Nov. 2025): Dynamische Self-Assessments für Kommunikation, Führung, Selbstwahrnehmung; Smart Nudges via Microsoft Teams und E-Mail; erweiterte Rollenspielszenarien; tiefere HRIS-Analytics. 70 %+ Coachees bewerten AIMY positiv, 84 % setzen nach Profil-Anpassung fort.",
+              implication: "CoachHub setzt den B2B-Standard für messbares KI-Coaching. Unsere B2B-Lösung braucht vergleichbares Analytics-Niveau."
+            }
+          ],
+          business: [],
+          personal: [],
+          press: []
+        },
+        "Sharpist": {
+          product: [
+            {
+              title: "Sharpist Match³: KI-Coach-Matching nach Lernstil, Persönlichkeit und Unternehmenskontext",
+              url: "https://www.sharpist.com/press",
+              source: "Sharpist Press",
+              date: "2024-11",
+              tag: "Produkt",
+              relevance: 1,
+              summary: "Match³ verbessert algorithmisches Coach-Matching in drei Dimensionen. Neue Goals Page im L&D-Dashboard für datengetriebene HR-Insights zur Führungskräfteentwicklung. Keine weiteren April-2026-Meldungen."
+            }
+          ],
+          business: [
+            {
+              title: "Letztes bekanntes Funding: Series A ~$23 Mio. (2022, Lead: Verdane) – keine neuen Runden",
+              url: "https://www.eu-startups.com/2022/02/berlin-based-sharpist-raises-e20-million-to-provide-personalized-learning-for-every-employee/",
+              source: "EU-Startups",
+              date: "2022-02",
+              tag: "Funding",
+              relevance: 1,
+              summary: "Keine neuen Finanzierungsrunden oder signifikante Business-Meldungen für April 2026 identifiziert. Letztes Funding: Series A ~$23 Mio. (Feb. 2022), Lead-Investor Verdane."
+            }
+          ],
+          personal: [],
+          press: []
+        },
+        "BetterUp": {
+          product: [
+            {
+              title: "'Human + AI Coaching for All': Unified Coaching mit geteiltem Feedback-Loop – KI-Nutzung +16 %",
+              url: "https://www.betterup.com/press/betterup-launches-ai-coaching",
+              source: "BetterUp Press",
+              date: "2026-04",
+              tag: "Produkt",
+              relevance: 3,
+              summary: "BetterUp lanciert unified Human + AI Coaching ohne Übergabe-Brüche. Geteilte Feedback-Loops. BetterUp Labs: Mitarbeitende wenden sich 16 % häufiger an KI-Coaching für sofortige Herausforderungen wie schwierige Gespräche.",
+              implication: "Hybrid-Modell wird Marktstandard. Strategische Frage: Bieten wir Human-Coach-Option an oder bleiben wir bewusst App-only?"
+            }
+          ],
+          business: [
+            {
+              title: "Uplift 2026 (15.–16. April, SF): 'Agents of Change' – CHROs + C-Suite als Zielgruppe",
+              url: "https://www.betterup.com/uplift/highlights",
+              source: "BetterUp",
+              date: "2026-04-15",
+              tag: "Markt",
+              relevance: 2,
+              summary: "Jährlicher Leadership-Summit mit Brené Brown, Adam Grant, Kristen Bell. Research-Release: 'The Case for Conditions'. BetterUp positioniert sich als Thought-Leader für HR-Entscheider im KI-Zeitalter."
+            }
+          ],
+          personal: [],
+          press: [
+            {
+              title: "Positive Presse: BetterUp als 'Human-First AI Company' mit Top-Speaker-Lineup",
+              url: "https://www.businesswire.com/news/home/20260318842234/en/Kristen-Bell-Adam-Grant-Bren-Brown-Pete-Sohn-Derrick-Henry-and-Nick-Saban-to-Headline-BetterUps-Uplift-2026",
+              source: "BusinessWire",
+              date: "2026-03-18",
+              tag: "Markt",
+              relevance: 1,
+              summary: "Medienberichterstattung zu Uplift 2026 über HR-Fachpresse und LinkedIn. Starkes Speaker-Lineup erzeugt Aufmerksamkeit bei CHRO-Zielgruppe und stärkt Glaubwürdigkeit im Enterprise-Bereich."
+            }
+          ]
+        },
+        "Bunch.ai": {
+          product: [
+            {
+              title: "Bunchee KI-Coach auf GPT-4 umgestellt – verbessertes Leadership-Coaching",
+              url: "https://bunch.ai/",
+              source: "Bunch.ai",
+              date: "2026-03",
+              tag: "Produkt",
+              relevance: 1,
+              summary: "Bunchee auf GPT-4 umgestellt. Verbessertes Onboarding, erleichterter Zugang zur Human-Coach-Option. Blog-Content März 2026 zu 'AI Leadership Coach for Teams' intensiviert."
+            }
+          ],
+          business: [
+            {
+              title: "Akquisition durch Significo (Juni 2024) – kein eigenständiges Unternehmen mehr",
+              url: "https://www.businesswire.com/news/home/20240625347434/en/Health-Tech-Company-Significo-Acquires-Bunch-an-AI-Leadership-Coach-App",
+              source: "BusinessWire",
+              date: "2024-06",
+              tag: "Funding",
+              relevance: 2,
+              summary: "Significo (Custom-Software-Entwicklung) hat Bunch.ai im Juni 2024 akquiriert. Operiert seither als Geschäftsbereich. Kein eigenständiges Startup mehr, keine neuen Funding-Runden."
+            }
+          ],
+          personal: [],
+          press: []
+        },
+        "PocketCoach": {
+          product: [
+            {
+              title: "PocketCoach: CBT-basierter Ansatz mit Krisenweiterleitung – Markenverwirrung durch mehrere unabhängige Apps",
+              url: "https://www.getpocketcoach.app/",
+              source: "getpocketcoach.app",
+              date: "2026",
+              tag: "Produkt",
+              relevance: 1,
+              summary: "Unter 'PocketCoach' existieren mehrere unabhängige Apps (Couples Coaching, AI Career, Nutrition). Couples-Wellness-Variante nutzt CBT-validierte Frameworks mit 24/7 KI-Verfügbarkeit und Krisenweiterleitung. Laut Arahi AI: einer der führenden Tools mit Mensch-Eskalation."
+            }
+          ],
+          business: [],
+          personal: [],
+          press: []
+        },
+        "Coach.me": {
+          product: [
+            {
+              title: "Coach.me 2026: Coaching-Mastermind für Pro-Members angekündigt",
+              url: "https://blog.coach.me/coach-me-2025-annual-update/",
+              source: "Coach.me Blog",
+              date: "2025-12",
+              tag: "Produkt",
+              relevance: 1,
+              summary: "Coach.me kündigt für 2026 ein Coaching-Mastermind für Pro-Members an. Plattform verbindet Habit-Tracking mit asynchronem Human-Coaching. Ansonsten ruhiges Produktjahr, keine weiteren April-Meldungen."
+            }
+          ],
+          business: [],
+          personal: [],
+          press: []
+        },
+        "Headspace": {
+          product: [
+            {
+              title: "Ebb: Voice Mode + Enhanced Memory – persistente emotionale Kontinuität (Rollout Q1 2026)",
+              url: "https://hlth.com/insights/news/headspace-updates-ebb-ai-with-voice-mode-and-enhanced-memory-to-deepen-mental-health-support-2025-12-09",
+              source: "HLTH / Headspace",
+              date: "2025-12",
+              tag: "Produkt",
+              relevance: 3,
+              summary: "Ebb erhält Voice Mode (Sprechen statt Tippen) und Enhanced Memory (persistentes Gedächtnis für emotionale Kontinuität). Rollout USA, UK, Canada, Australien – DACH-Expansion 2026 angekündigt.",
+              implication: "Voice + Memory wird zum Branchen-Standard. Persistentes Gedächtnis ist für unsere Ich-Landkarte architektonisch relevant – Roadmap-Priorisierung prüfen."
+            },
+            {
+              title: "Stratified Care Model für Enterprise: KI-Triage leitet automatisch zu passendem Support-Level",
+              url: "https://organizations.headspace.com/blog/transforming-workforce-mental-health-with-our-new-ai-powered-stratified-care-model",
+              source: "Headspace for Organizations",
+              date: "2026-01",
+              tag: "Produkt",
+              relevance: 2,
+              summary: "Enterprise-Modell: Smart Triage leitet Mitarbeitende zu KI-Companion, Coaching oder Therapie. Echtzeit-Fortschrittsverfolgung, personalisiertes Provider-Matching ab Januar 2026.",
+              implication: "Stratified Care ist der entscheidende B2B-Differenziator: Vorlage, wie Coaching in eine breitere Mental-Health-Wertschöpfungskette positioniert werden kann."
+            }
+          ],
+          business: [
+            {
+              title: "Headspace als IPO-Kandidat 2026 – letztes Funding $105 Mio. Debt (Juli 2023)",
+              url: "https://bhbusiness.com/2025/12/09/pitchbook-headspace-spring-health-could-ipo-expect-admin-layoffs-in-healthcare/",
+              source: "Behavioral Health Business",
+              date: "2025-12",
+              tag: "Funding",
+              relevance: 2,
+              summary: "PitchBook identifiziert Headspace neben Spring Health als möglichen IPO-Kandidaten. Letztes Funding: $105 Mio. Conventional Debt (Juli 2023), Gesamtkapital $178 Mio. über 10 Runden.",
+              implication: "Ein möglicher Headspace-IPO professionalisiert den Markt und erhöht die Qualitätsmesslatte für das gesamte Segment."
+            }
+          ],
+          personal: [],
+          press: []
+        }
+      }
+    }
+  }
+};
+
+// ════════════════════════════════════════════════════════
+//  CONFIG
+// ════════════════════════════════════════════════════════
+const SECTIONS = [
+  { key: "market",      label: "Markt & Nachfrage" },
+  { key: "userNeeds",   label: "Nutzerverhalten & Bedürfnisse" },
+  { key: "science",     label: "Wissenschaft & Evidenz" },
+  { key: "ai",          label: "KI & Technologie" },
+  { key: "regulation",  label: "Regulatorik & Ethik" },
+  { key: "competitors", label: "Wettbewerb" }
+];
+
+const COMPETITORS = ["onesome","CoachHub","Sharpist","BetterUp","Bunch.ai","PocketCoach","Coach.me","Headspace"];
+
+const COMP_FIELDS = [
+  { key: "product",  label: "Produkt" },
+  { key: "business", label: "Business" },
+  { key: "personal", label: "Personal" },
+  { key: "press",    label: "Presse & Sentiment" }
+];
+
+const TAG_COLORS = {
+  "Studie":       "bg-blue-100 text-blue-700",
+  "Meta-Analyse": "bg-violet-100 text-violet-700",
+  "Review":       "bg-indigo-100 text-indigo-700",
+  "RCT":          "bg-teal-100 text-teal-700",
+  "Funding":      "bg-emerald-100 text-emerald-700",
+  "Produkt":      "bg-amber-100 text-amber-700",
+  "Regulierung":  "bg-rose-100 text-rose-700",
+  "Datenschutz":  "bg-red-100 text-red-700",
+  "Personalia":   "bg-pink-100 text-pink-700",
+  "Markt":        "bg-cyan-100 text-cyan-700"
+};
+
+const RELEVANCE = {
+  1: { cls: "bg-emerald-400", title: "Nice to know" },
+  2: { cls: "bg-amber-400",   title: "Beobachten" },
+  3: { cls: "bg-red-500",     title: "Strategisch wichtig" }
+};
+
+let activeMonth = null;
+
+// ════════════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════════════
+function init() {
+  const months = Object.keys(briefings);
+  const hash = location.hash.replace("#", "");
+  activeMonth = (hash && briefings[hash]) ? hash : months[months.length - 1];
+  renderTabs(months);
+  renderPage(activeMonth);
+  window.addEventListener("hashchange", () => {
+    const h = location.hash.replace("#", "");
+    if (h && briefings[h] && h !== activeMonth) {
+      activeMonth = h;
+      updateTabHighlight();
+      renderPage(activeMonth);
+    }
+  });
+}
+
+// ════════════════════════════════════════════════════════
+//  TABS
+// ════════════════════════════════════════════════════════
+function renderTabs(months) {
+  document.getElementById("tabBar").innerHTML = months.map(m =>
+    `<button class="tab-btn${m === activeMonth ? " active" : ""}" data-month="${m}" onclick="switchTab('${m}')">${briefings[m].label}</button>`
+  ).join("");
+}
+
+function updateTabHighlight() {
+  document.querySelectorAll(".tab-btn").forEach(b =>
+    b.classList.toggle("active", b.dataset.month === activeMonth)
+  );
+}
+
+function switchTab(month) {
+  if (month === activeMonth) return;
+  activeMonth = month;
+  history.replaceState(null, "", "#" + month);
+  updateTabHighlight();
+  renderPage(month);
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+// ════════════════════════════════════════════════════════
+//  SUB NAV
+// ════════════════════════════════════════════════════════
+function renderSubNav() {
+  document.getElementById("subNav").innerHTML = SECTIONS.map(s =>
+    `<a class="snav-a" data-sec="${s.key}" href="#section-${s.key}"
+       onclick="scrollToSec(event,'${s.key}')">${s.label}</a>`
+  ).join("");
+}
+
+function scrollToSec(e, key) {
+  e.preventDefault();
+  const el = document.getElementById("section-" + key);
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - 190;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
+function observeSections() {
+  if (window._obs) window._obs.disconnect();
+  window._obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll(".snav-a").forEach(a =>
+          a.classList.toggle("active", a.dataset.sec === e.target.dataset.sec)
+        );
+      }
+    });
+  }, { rootMargin: "-190px 0px -50% 0px", threshold: 0 });
+  SECTIONS.forEach(s => {
+    const el = document.getElementById("section-" + s.key);
+    if (el) { el.dataset.sec = s.key; window._obs.observe(el); }
+  });
+}
+
+// ════════════════════════════════════════════════════════
+//  PAGE RENDER
+// ════════════════════════════════════════════════════════
+function renderPage(month) {
+  renderSubNav();
+  const data = briefings[month];
+  const html = SECTIONS.map(sec =>
+    sec.key === "competitors"
+      ? renderCompetitors(data.sections.competitors)
+      : renderSection(sec, data.sections[sec.key] || [])
+  ).join("");
+  document.getElementById("mainContent").innerHTML = html;
+  observeSections();
+}
+
+// ════════════════════════════════════════════════════════
+//  SECTION
+// ════════════════════════════════════════════════════════
+function renderSection(sec, items) {
+  const body = items.length
+    ? `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">${items.map(renderCard).join("")}</div>`
+    : `<p class="text-sm text-slate-400 italic pl-1">Keine relevanten Meldungen in diesem Monat.</p>`;
+  return `<section id="section-${sec.key}" class="mb-14" style="scroll-margin-top:200px">
+    <h2 class="text-base font-bold text-slate-900 mb-5 pb-2 border-b border-slate-200">${sec.label}</h2>
+    ${body}
+  </section>`;
+}
+
+function renderCard(item) {
+  const rel = RELEVANCE[item.relevance] || RELEVANCE[1];
+  const tagCls = TAG_COLORS[item.tag] || "bg-slate-100 text-slate-600";
+  const impl = item.implication
+    ? `<div class="mt-3 pt-3 border-t border-slate-100">
+         <p class="text-xs font-semibold text-indigo-600 uppercase tracking-wide mb-1">Was bedeutet das für uns?</p>
+         <p class="text-sm text-slate-700 leading-relaxed">${item.implication}</p>
+       </div>`
+    : "";
+  return `<div class="card bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex flex-col gap-2 hover:shadow-md transition-shadow">
+    <div class="flex items-start gap-2.5">
+      <span class="mt-1.5 w-2.5 h-2.5 rounded-full flex-shrink-0 ${rel.cls}" title="${rel.title}"></span>
+      <div class="flex-1 min-w-0">
+        <a href="${item.url}" onclick="openLink(event,'${item.url}')"
+           class="font-semibold text-sm text-indigo-700 hover:text-indigo-900 hover:underline leading-snug cursor-pointer">${item.title}</a>
+        <div class="flex flex-wrap gap-x-2 gap-y-1 mt-1.5 items-center">
+          <span class="text-xs text-slate-400">${item.source}</span>
+          <span class="text-slate-300 text-xs">·</span>
+          <span class="text-xs text-slate-400">${item.date}</span>
+          <span class="text-xs px-2 py-0.5 rounded-full font-medium ${tagCls}">${item.tag}</span>
+        </div>
+      </div>
+    </div>
+    <p class="text-sm text-slate-600 leading-relaxed pl-5">${item.summary}</p>
+    ${impl}
+  </div>`;
+}
+
+// ════════════════════════════════════════════════════════
+//  COMPETITORS
+// ════════════════════════════════════════════════════════
+function renderCompetitors(data) {
+  const cards = COMPETITORS.map(name => {
+    const c = data[name] || {};
+    const fields = COMP_FIELDS.map(f => {
+      const items = c[f.key] || [];
+      const body = items.length
+        ? items.map(renderMiniCard).join("")
+        : `<p class="text-xs text-slate-400 italic">Keine relevanten Meldungen</p>`;
+      return `<div>
+        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">${f.label}</p>
+        <div class="space-y-3">${body}</div>
+      </div>`;
+    }).join("");
+    return `<div class="card bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+      <h3 class="text-sm font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">${name}</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">${fields}</div>
+    </div>`;
+  }).join("");
+  return `<section id="section-competitors" class="mb-14" style="scroll-margin-top:200px">
+    <h2 class="text-base font-bold text-slate-900 mb-5 pb-2 border-b border-slate-200">Wettbewerb</h2>
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">${cards}</div>
+  </section>`;
+}
+
+function renderMiniCard(item) {
+  const rel = RELEVANCE[item.relevance] || RELEVANCE[1];
+  const tagCls = TAG_COLORS[item.tag] || "bg-slate-100 text-slate-600";
+  const impl = item.implication
+    ? `<p class="text-xs text-indigo-600 mt-1 leading-relaxed">${item.implication}</p>`
+    : "";
+  return `<div class="flex gap-2">
+    <span class="mt-1 w-2 h-2 rounded-full flex-shrink-0 ${rel.cls}" title="${rel.title}"></span>
+    <div class="min-w-0">
+      <a href="${item.url}" onclick="openLink(event,'${item.url}')"
+         class="text-xs font-semibold text-indigo-700 hover:text-indigo-900 hover:underline leading-snug cursor-pointer">${item.title}</a>
+      <div class="flex flex-wrap gap-x-1.5 items-center mt-0.5">
+        <span class="text-xs text-slate-400">${item.source} · ${item.date}</span>
+        <span class="text-xs px-1.5 py-px rounded-full font-medium ${tagCls}">${item.tag}</span>
+      </div>
+      <p class="text-xs text-slate-600 mt-1 leading-relaxed">${item.summary}</p>
+      ${impl}
+    </div>
+  </div>`;
+}
+
+// ════════════════════════════════════════════════════════
+//  LINK HANDLER  (works in sandboxed iframes + standalone)
+// ════════════════════════════════════════════════════════
+function openLink(e, url) {
+  e.preventDefault();
+  e.stopPropagation();
+  const opened = window.open(url, "_blank", "noopener,noreferrer");
+  if (!opened) window.location.href = url; // fallback: same tab
+}
+
+// ════════════════════════════════════════════════════════
+//  COPY LINK
+// ════════════════════════════════════════════════════════
+function copyLink() {
+  const url = location.href.split("#")[0] + "#" + activeMonth;
+  const btn = document.getElementById("copyBtn");
+  const orig = btn.innerHTML;
+  const ok = `<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Kopiert!`;
+  (navigator.clipboard
+    ? navigator.clipboard.writeText(url)
+    : Promise.reject()
+  ).then(() => {
+    btn.innerHTML = ok;
+    setTimeout(() => { btn.innerHTML = orig; }, 2000);
+  }).catch(() => {
+    prompt("Link markieren und kopieren:", url);
+  });
+}
+
+// Start
+init();
+</script>
+
+<!--
+════════════════════════════════════════════════════════════
+  NEUEN MONAT HINZUFÜGEN – Schritt-für-Schritt-Anleitung
+════════════════════════════════════════════════════════════
+
+SCHRITT 1: Recherche
+  - Alle 6 Sektionen für den neuen Monat recherchieren.
+  - Nur Open-Access-Quellen; Paywall-Quellen ausschließen.
+  - Pro Sektion: 4–8 Meldungen, sortiert nach Relevanz (3=rot → 1=grün).
+  - Pro Wettbewerber: 0–3 Einträge pro Sub-Feld; leere Felder als [] lassen.
+
+SCHRITT 2: Code in das briefings-Objekt einfügen
+  Den folgenden Block NACH dem letzten vorhandenen Monats-Eintrag einfügen.
+  Das Komma nach dem vorangehenden Eintrag nicht vergessen!
+
+─────────────────────────────────────────────────────────────
+  "2026-05": {
+    label: "Mai 2026",
+    sections: {
+      market: [
+        {
+          title: "Titel der Meldung",
+          url: "https://...",
+          source: "Quellenname",
+          date: "2026-05-DD",
+          tag: "Markt",
+          // Erlaubte Tags: Studie | Meta-Analyse | Review | RCT | Funding |
+          //               Produkt | Regulierung | Datenschutz | Personalia | Markt
+          relevance: 3,
+          // 1 = grün (nice to know)
+          // 2 = gelb (beobachten)
+          // 3 = rot  (strategisch wichtig)
+          summary: "2-4 Saetze Zusammenfassung in eigenen Worten.",
+          implication: "Ein Satz konkrete Implikation fuer unsere App. Weglassen wenn keine echte Implikation."
+        }
+        // ... weitere Eintraege (4-8 pro Sektion, absteigend nach Relevanz)
+      ],
+      userNeeds:  [ /* gleiche Struktur */ ],
+      science:    [ /* gleiche Struktur */ ],
+      ai:         [ /* gleiche Struktur */ ],
+      regulation: [ /* gleiche Struktur */ ],
+      competitors: {
+        "onesome":    { product: [], business: [], personal: [], press: [] },
+        "CoachHub":   { product: [], business: [], personal: [], press: [] },
+        "Sharpist":   { product: [], business: [], personal: [], press: [] },
+        "BetterUp":   { product: [], business: [], personal: [], press: [] },
+        "Bunch.ai":   { product: [], business: [], personal: [], press: [] },
+        "PocketCoach":{ product: [], business: [], personal: [], press: [] },
+        "Coach.me":   { product: [], business: [], personal: [], press: [] },
+        "Headspace":  { product: [], business: [], personal: [], press: [] }
+      }
+    }
+  }
+─────────────────────────────────────────────────────────────
+
+SCHRITT 3: Neuen Wettbewerber hinzufügen (optional)
+  1. Im briefings-Objekt unter competitors eintragen.
+  2. Namen im COMPETITORS-Array ergaenzen (ca. Zeile 320 im Script).
+  Das Rendering laeuft generisch - keine weiteren Aenderungen noetig.
+
+SCHRITT 4: Neuen Tag hinzufügen (optional)
+  Im TAG_COLORS-Objekt ergaenzen (ca. Zeile 340):
+    "MeinTag": "bg-orange-100 text-orange-700"
+
+SCHRITT 5: Testen
+  - Datei per Doppelklick im Browser oeffnen.
+  - Deep-Link testen: briefing.html#2026-05
+  - "Link kopieren" testen.
+  - Druck-Test: Cmd/Ctrl+P -> aktiver Tab als PDF exportieren.
+
+HINWEISE
+  - "Keine relevanten Meldungen" ist valide - nicht kuenstlich auffuellen.
+  - implication weglassen (nicht als Leerstring) wenn keine echte Implikation.
+  - Bei Studien: Studientyp und Stichprobe im summary nennen (z.B. "RCT, n=240").
+  - Bei Funding: Runde, Betrag, Lead-Investor nennen.
+  - Quellen VOR dem Einfuegen auf Paywall-Freiheit pruefen.
+
+════════════════════════════════════════════════════════════
+-->
+</body>
+</html>
