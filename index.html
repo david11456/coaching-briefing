@@ -236,6 +236,26 @@ const briefings = {
           relevance: 2,
           summary: "Erste qualitative Studie (April 2026, n=17 Personen mit Depressionserfahrung) zur Nutzererfahrung eines GPT-4o-basierten MH-Companions in Selbstmanagement-Szenarien. Identifizierte konkrete Design-Strategien zur Schadens-Minimierung: actionable info, emotional validation with limits, personalization without unsafe disclosure.",
           implication: "Konkrete, evidenzbasierte Design-Anker für unsere LLM-Komponenten. Vermeidung leerer Empathie-Floskeln, klare 'Grenzen-Kommunikation' bei sensiblen Themen, datenschutz-kompatible Personalisierung."
+        },
+        {
+          title: "Anthropic Claude Opus 4.7 (16. April 2026): Stärkere Instruction-Following- und Vision-Fähigkeiten, längere Tasks",
+          url: "https://www.anthropic.com/news",
+          source: "Anthropic",
+          date: "2026-04-16",
+          tag: "Produkt",
+          relevance: 2,
+          summary: "Anthropic veröffentlicht am 16. April 2026 Claude Opus 4.7. Schwerpunkte: fortgeschrittene Software-Engineering-Aufgaben, längere durchgehende Tasks, präziseres Instruction-Following, verbesserte Vision. Allgemein verfügbar, keine reine Forschungs-Preview.",
+          implication: "Längere zusammenhängende Coaching-Sessions mit konsistenter Persona/Memory werden technisch realistischer. Architektur-Entscheidung 'multi-turn statt one-shot' wird durch verfügbare Foundation-Models gestützt."
+        },
+        {
+          title: "OpenAI GPT-5.5 (23. April 2026): Bessere Coding-, Computer-Use- und Deep-Research-Fähigkeiten",
+          url: "https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html",
+          source: "CNBC",
+          date: "2026-04-23",
+          tag: "Produkt",
+          relevance: 1,
+          summary: "OpenAI kündigt am 23. April 2026 GPT-5.5 an. Verbesserungen primär in Coding, Computer-Use (Agenten-Workflows) und tieferen Recherche-Fähigkeiten. Modell-Generation eher inkrementell, kein großer Sprung.",
+          implication: "Foundation-Model-Wettbewerb wird zur Commodity – Differenzierung von Coaching-Apps liegt nicht im Basis-LLM, sondern in Theorie-Tiefe, Sicherheitsarchitektur und kuratierter Domänen-Konfiguration."
         }
       ],
 
@@ -260,6 +280,26 @@ const briefings = {
           relevance: 2,
           summary: "Gibson-Dunn-Monatsübersicht (April 2026) zur EU-Datenschutz-Entwicklung: EDPB-Coordinated-Enforcement zu Transparenzpflichten läuft, 25 nationale Behörden prüfen synchron. Erste Sektor-Leitlinien zu sensiblen Datenverarbeitungen (inkl. Gesundheits-Apps) in Vorbereitung.",
           implication: "Datenschutz-Audit und Transparenz-Doku jetzt aktualisieren – nicht erst, wenn nationale Behörde Anfrage stellt. Sektor-Leitlinien zu MH-Daten antizipieren: minimale Datenerhebung, klare Zweckbindung, keine versteckten Drittparteien-Übermittlungen."
+        },
+        {
+          title: "EDPB Guidelines 1/2026 (16. April 2026): Verarbeitung personenbezogener Daten für wissenschaftliche Forschung – Rechtsgrundlagen, Transparenz, Schutzmaßnahmen",
+          url: "https://www.edpb.europa.eu/our-work-tools/documents/public-consultations/2026/recommendations-12026-application-approval-and_en",
+          source: "European Data Protection Board",
+          date: "2026-04-16",
+          tag: "Regulierung",
+          relevance: 2,
+          summary: "EDPB adoptiert am 15. April 2026 und veröffentlicht am 16. April 2026 die Guidelines 1/2026: Definition 'wissenschaftliche Forschung', Rechtsgrundlagen für sensible Daten (Broad Consent, öffentliches Interesse, berechtigtes Interesse), Transparenzpflichten und Schutzmaßnahmen nach Art. 89(1) DSGVO.",
+          implication: "Falls wir eigene Wirksamkeits-Studien mit anonymisierten Nutzungsdaten planen: Rechtsgrundlagen und Consent-Architektur jetzt klar definieren. Broad Consent ist möglich, aber an strenge Transparenz- und Widerrufs-Mechanismen gebunden."
+        },
+        {
+          title: "US-Bundesstaaten April 2026: 11 Staaten haben KI-in-Mental-Health-Gesetzgebung verabschiedet oder vorgeschlagen",
+          url: "https://compliancehub.wiki/digital-therapy-compliance-hipaa-42-cfr-part-2-ftc-2026-mental-health-data/",
+          source: "ComplianceHub Wiki",
+          date: "2026-04",
+          tag: "Regulierung",
+          relevance: 2,
+          summary: "Stand April 2026: 11 US-Bundesstaaten haben Gesetzgebung zu KI in der psychischen Gesundheitsversorgung verabschiedet oder eingebracht. Mehrere Staaten verbieten KI-Systemen, eigenständig Therapie, Beratung oder Psychotherapie auszuüben oder zu bewerben – ohne klinische Aufsicht.",
+          implication: "Für US-Expansion entscheidend: Wording in App, Marketing und Store-Listings muss klar auf 'Coaching / Reflexion' bleiben, nicht 'Therapie / Counseling'. State-by-State-Compliance-Matrix vor Launch aufbauen."
         }
       ],
 
@@ -357,7 +397,18 @@ const briefings = {
           financials: []
         },
         "Headspace": {
-          product: [],
+          product: [
+            {
+              title: "Headspace startet 'Therapy by Headspace' – D2C-Therapie mit KI-Begleiter Ebb und Versicherungs-Anbindung",
+              url: "https://www.managedhealthcareexecutive.com/view/headspace-joins-direct-to-consumer-therapy-space-with-ai-companion-ebb",
+              source: "Managed Healthcare Executive",
+              date: "2026-04",
+              tag: "Produkt",
+              relevance: 3,
+              summary: "Headspace debütiert Mitte April 2026 'Therapy by Headspace': D2C-Therapie-Angebot mit lizenzierten Therapeuten plus KI-Companion Ebb zwischen Sitzungen. Versicherungs-Anbindung u. a. an Cigna, UnitedHealthcare, Optum, Blue Shield – Out-of-Pocket meist $0–$35 pro Sitzung.",
+              implication: "Headspace verschiebt die Linie zwischen Coaching, Wellness und Therapie aggressiv – mit Versicherungs-Reichweite. Für uns wichtig: klare Positionierung unterhalb der Therapieschwelle stärken, um nicht als minderwertige Therapie-Alternative wahrgenommen zu werden."
+            }
+          ],
           business: [],
           personal: [],
           press: [],
