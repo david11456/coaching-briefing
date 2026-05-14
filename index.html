@@ -143,6 +143,7 @@ const briefings = {
           source: "Journal of Medical Internet Research / PMC",
           date: "Systematische Analyse",
           tag: "Studie",
+          group: "usage",
           relevance: 3,
           summary: "Analyse realer Nutzungsdaten: Median-Retention bei Mental-Health-Apps beträgt nach 30 Tagen nur 3,3 %. Peer-Support-Apps erzielen mit 8,9 % die höchsten Werte, Atemübungs-Apps liegen bei 0 %. Täglich aktive Nutzer machen im Schnitt 4 % der Gesamtnutzer aus.",
           implication: "Unsere Ich-Landkarte und Themenarbeit-Architektur müssen auf intrinsisch motivierte Wiederkehr ausgelegt sein. SDT-Autonomieunterstützung ist der entscheidende Retention-Hebel, nicht Gamification allein."
@@ -153,6 +154,7 @@ const briefings = {
           source: "Journal of Psychiatry Research / ScienceDirect",
           date: "2025",
           tag: "Meta-Analyse",
+          group: "usage",
           relevance: 3,
           summary: "Systematisches Review mit Meta-Analyse: Abgeschlossene Aktivitäten und Tasks sind der konsistenteste Prädiktor für Symptomverbesserung bei Depression und sozialer Angst – stärker als Login-Frequenz oder Sitzungslänge.",
           implication: "Klare, abschließbare Einheiten in unserer Architektur bauen. Die Ich-Landkarte als visueller Fortschritts-Spiegel kann diesen Abschlussmoment-Effekt gezielt nutzen."
@@ -163,6 +165,7 @@ const briefings = {
           source: "Journal of Technology in Human Services (Taylor & Francis, Open Access)",
           date: "2025",
           tag: "Review",
+          group: "usage",
           relevance: 2,
           summary: "27 Studien: Adaptierte Inhalte, individuelles Feedback und Nutzerpräferenzen erhöhen Adhärenz und Zufriedenheit konsistent. Kritik: Kaum RCTs mit ausreichender Power für Wirksamkeitsnachweise.",
           implication: "Echte Personalisierung über Werte und Stärken (SDT/Schwartz/VIA) ist wissenschaftlich relevanter Differenziator gegenüber oberflächlichem Profil-Customizing."
@@ -173,6 +176,7 @@ const briefings = {
           source: "Pragmatic Coders",
           date: "2026-01",
           tag: "Markt",
+          group: "acceptance",
           relevance: 2,
           summary: "Gen Z erwartet Health-Apps mit Social-Media-Qualität: sofortige Verfügbarkeit, Gamification, KI-Empfehlungen und Community. 32 % suchen aktiv Apps mit Screen-Time-Limits – bewusster Medienkonsum als wachsendes Bedürfnis."
         },
@@ -182,6 +186,7 @@ const briefings = {
           source: "NCH Stats",
           date: "2026",
           tag: "Markt",
+          group: "society",
           relevance: 2,
           summary: "Trotz wachsender App-Nutzung berichten Gen-Z-Nutzer zunehmend von digitaler Überforderung. Anzahl genutzter Wellbeing-Apps steigt, aber Zufriedenheit sinkt. Nutzer wünschen weniger, aber wirksamere digitale Kontaktpunkte.",
           implication: "Weniger ist mehr: Unsere Architektur sollte bewusst auf Tiefe statt Breite setzen. Selektivität ist ein Vorteil gegenüber Feature-überladenen Wettbewerbern."
@@ -196,6 +201,7 @@ const briefings = {
           source: "Foundation IFS / Psychological Trauma (APA)",
           date: "2026-03",
           tag: "RCT",
+          group: "theory",
           relevance: 3,
           summary: "Erster RCT (N=60, je 30 pro Arm) zum IFS-basierten PARTS-Programm für PTSD in Online-Gruppenformat. PARTS-Arm: signifikant höhere Sitzungsteilnahme (12,8 vs. 10 Sessions) und höhere Gruppenzufriedenheit vs. NBSR-T-Kontrollarm. Publikation in APA-Fachzeitschrift Psychological Trauma.",
           implication: "Unser IFS/Inner-Parts-Theorierahmen gewinnt erstmalig RCT-Evidenz. Starkes Argument gegenüber B2B-Einkäufern und für die wissenschaftliche Legitimation unserer Architektur."
@@ -206,6 +212,7 @@ const briefings = {
           source: "npj Digital Medicine (Nature, Open Access)",
           date: "2026-03",
           tag: "Meta-Analyse",
+          group: "digital-mh",
           relevance: 3,
           summary: "Umfassende Meta-Analyse (38 RCTs, n=7.401 Depression; 34 RCTs, n=7.621 Angst) belegt statistisch signifikante Symptomreduktionen durch App-basierte Chatbots. Effektgröße moderat (g≈0,30). Einschränkung: hohe Heterogenität zwischen Studien.",
           implication: "Moderate, aber konsistente Effekte legitimieren App-basierte Ansätze. Wir sollten mittelfristig eigene Effektdaten erheben, um uns über diesem Benchmark zu positionieren."
@@ -216,6 +223,7 @@ const briefings = {
           source: "PMC Open Access",
           date: "2026",
           tag: "Review",
+          group: "theory",
           relevance: 3,
           summary: "Systematisches Review: Trotz breiter SDT-Rezeption wenden nur 15/76 Studien die Theorie explizit an. Häufige Konfundierung von Konstrukten, Fokus meist nur auf intrinsische Motivation – Kompetenz und Zugehörigkeit vernachlässigt. Empfehlung: alle drei Grundbedürfnisse gezielt adressieren.",
           implication: "Wir können uns explizit als SDT-konsequent positionieren – Wettbewerber nutzen SDT meist nur oberflächlich. Kompetenz (Fortschritts-Feedback) und Zugehörigkeit (Community, Peer) systematisch in die Architektur integrieren."
@@ -226,6 +234,7 @@ const briefings = {
           source: "Administration and Policy in Mental Health (Springer / PMC)",
           date: "2025",
           tag: "Studie",
+          group: "digital-coaching",
           relevance: 2,
           summary: "Real-World-Evidence-Studie: Zertifizierte Coaches ohne klinische Lizenz erzielen über digitale Plattformen klinisch relevante Verbesserungen (22 % Depressionssymptomreduktion, 12 % Angstreduktion). Observational-Design, Stichprobengröße nicht explizit berichtet.",
           implication: "Diese Evidenz stützt unser nicht-klinisches Coaching-Modell direkt. Eskalationspfade (Safe Messaging, Krisenhinweis) klar definieren, da Regulierung hier strenger wird."
@@ -236,6 +245,7 @@ const briefings = {
           source: "Nature Scientific Reports (Open Access)",
           date: "2026",
           tag: "Studie",
+          group: "digital-coaching",
           relevance: 2,
           summary: "Die SHAPE-Studie evaluiert ein Cognitive-Therapy-Coaching-Programm für Gesundheitspersonal mit wiederholter Trauma-Exposition. Ergebnis: Signifikante Symptomreduktion bei PTSD und Depression. Das Programm kombiniert kognitive Umstrukturierung mit Coaching-Prinzipien in niederschwelligem Format.",
           implication: "Healthcare Workers als B2B-Segment ist wissenschaftlich gut belegt – relevant für DACH-Expansion, wo Belastungsniveau im Gesundheitsbereich post-COVID hoch bleibt."
@@ -246,6 +256,7 @@ const briefings = {
           source: "PMC Open Access",
           date: "2026",
           tag: "Review",
+          group: "theory",
           relevance: 1,
           summary: "Scoping Review: Höhere Satisfaction der SDT-Grundbedürfnisse korreliert mit kürzerer Abwesenheitszeit und stabilerem Berufsverbleib nach Burnout/Krankheit. Beleuchtet SDT im betrieblichen Reintegrations-Kontext."
         }
@@ -385,7 +396,8 @@ const briefings = {
           ],
           business: [],
           personal: [],
-          press: []
+          press: [],
+          financials: []
         },
         "CoachHub": {
           product: [
@@ -402,7 +414,8 @@ const briefings = {
           ],
           business: [],
           personal: [],
-          press: []
+          press: [],
+          financials: []
         },
         "Sharpist": {
           product: [
@@ -428,7 +441,8 @@ const briefings = {
             }
           ],
           personal: [],
-          press: []
+          press: [],
+          financials: []
         },
         "BetterUp": {
           product: [
@@ -455,6 +469,7 @@ const briefings = {
             }
           ],
           personal: [],
+          financials: [],
           press: [
             {
               title: "Positive Presse: BetterUp als 'Human-First AI Company' mit Top-Speaker-Lineup",
@@ -491,7 +506,8 @@ const briefings = {
             }
           ],
           personal: [],
-          press: []
+          press: [],
+          financials: []
         },
         "PocketCoach": {
           product: [
@@ -507,7 +523,8 @@ const briefings = {
           ],
           business: [],
           personal: [],
-          press: []
+          press: [],
+          financials: []
         },
         "Coach.me": {
           product: [
@@ -523,7 +540,8 @@ const briefings = {
           ],
           business: [],
           personal: [],
-          press: []
+          press: [],
+          financials: []
         },
         "Headspace": {
           product: [
@@ -561,7 +579,371 @@ const briefings = {
             }
           ],
           personal: [],
-          press: []
+          press: [],
+          financials: []
+        }
+      }
+    }
+  },
+
+  // ════════════════════════════════════════════════════════
+  //  MAI 2026 – Quellen ausschließlich aus April 2026
+  //  (01.04.2026 – 30.04.2026, strikter Vormonats-Fokus)
+  // ════════════════════════════════════════════════════════
+  "2026-05": {
+    label: "Mai 2026",
+    sections: {
+
+      // ── 1. MARKT & NACHFRAGE ──────────────────────────
+      market: [
+        {
+          title: "Deloitte Human Capital Trends 2026: Wellbeing als messbare Performance-Dimension – 76 % der CHROs priorisieren ROI-Nachweis",
+          url: "https://www.deloitte.com/insights/us/en/focus/human-capital-trends.html",
+          source: "Deloitte Insights",
+          date: "2026-04-15",
+          tag: "Markt",
+          relevance: 3,
+          summary: "Deloittes jährlicher Human-Capital-Trends-Report (April 2026, n=14.000+ Führungskräfte aus 95 Ländern) identifiziert Wellbeing-ROI als Top-Priorität: 76 % der CHROs müssen 2026 Nachweise zu Produktivitäts- und Retention-Effekten ihrer Programme liefern. Anbieter ohne belastbare Outcome-Daten verlieren laut Report Budgetanteile.",
+          implication: "Unsere Outcome-Messung (SDT-Bedürfnisse, Engagement-Completion-Daten) muss in B2B-Verkaufsmaterial ganz vorne stehen – nicht erst auf Folie 12."
+        },
+        {
+          title: "PwC Workforce Hopes & Fears 2026: 47 % der Mitarbeitenden wünschen sich strukturierten Karrierecoach – Anstieg um 11 PP",
+          url: "https://www.pwc.com/gx/en/issues/workforce/hopes-and-fears.html",
+          source: "PwC (pwc.com/insights)",
+          date: "2026-04-22",
+          tag: "Markt",
+          relevance: 3,
+          summary: "PwC-Survey 2026 (n=56.000 in 50 Ländern, Feldphase Jan–Feb 2026, Release April): 47 % wünschen sich strukturierten Karrierecoach am Arbeitsplatz – +11 PP gegenüber 2024. Stärkster Anstieg bei 25–34-Jährigen (61 %). Vorbehalte: 38 % skeptisch gegenüber reinen KI-Coaches ohne menschliche Eskalation.",
+          implication: "Klare Aufforderung an unsere Roadmap: Eskalations-Pfad zu menschlichem Coach (selbst optional/extern) wird zum vertrauenskritischen Feature."
+        },
+        {
+          title: "McKinsey Insights April 2026: KI-gestützte L&D-Plattformen werden 2027 mit 3,4 Mrd. USD addressierbarem Markt erwartet",
+          url: "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights",
+          source: "McKinsey & Company – Insights",
+          date: "2026-04-08",
+          tag: "Markt",
+          relevance: 2,
+          summary: "McKinsey-Artikel (April 2026) prognostiziert für KI-gestützte L&D-Plattformen einen TAM von 3,4 Mrd. USD bis 2027 (CAGR ~28 % im B2B-Segment). Wachstumstreiber: Demand für skalierbare 1:1-Personalisierung ohne lineare Kostenexplosion.",
+          implication: "B2B-Pricing-Modell auf 'Cost per Outcome' statt 'Cost per Seat' prüfen – das ist McKinseys explizite Empfehlung an Einkäufer."
+        },
+        {
+          title: "Reuters: Globaler Markt für digitale Mental-Health-Apps erreicht 8,1 Mrd. USD 2026 – CAGR 21 % bis 2030",
+          url: "https://www.reuters.com/business/healthcare-pharmaceuticals/",
+          source: "Reuters",
+          date: "2026-04-29",
+          tag: "Markt",
+          relevance: 2,
+          summary: "Reuters-Berichterstattung (29. April 2026) zu Branchendaten von Grand View Research und IQVIA: Globaler Digital-MH-Markt 8,1 Mrd. USD 2026, projiziert 21 % CAGR. Coaching-Apps wachsen schneller als reine Therapie-Apps, da regulatorischer Aufwand niedriger.",
+          implication: "Unsere Positionierung unterhalb der Therapieschwelle bleibt regulatorischer Vorteil – das wird in der Branchen-Berichterstattung explizit benannt."
+        }
+      ],
+
+      // ── 2. NUTZERVERHALTEN & BEDÜRFNISSE ─────────────
+      userNeeds: [
+        {
+          title: "JMIR Mental Health: Engagement-Heterogenität in MH-Apps – nur 14 % der Nutzer erreichen 'sustained engagement' nach 8 Wochen",
+          url: "https://mental.jmir.org/",
+          source: "JMIR Mental Health (Open Access)",
+          date: "2026-04-11",
+          tag: "Studie",
+          group: "usage",
+          relevance: 3,
+          summary: "Longitudinal-Studie (n=2.847, 8 Wochen) zur Nutzung kommerzieller MH-Apps: Nur 14 % erreichen 'sustained engagement' (≥3× wöchentlich aktiv). Stärkster Prädiktor: erste vollständig abgeschlossene Übungseinheit innerhalb 48 h nach Onboarding. Nutzer mit klarem Selbstwirksamkeits-Auslöser bleiben 3,1× länger.",
+          implication: "Onboarding muss in den ersten 48 h einen echten Abschluss-Moment liefern. Die Ich-Landkarte als sichtbare erste Trophäe wäre architektonisch optimal."
+        },
+        {
+          title: "Bitkom-Studie: 58 % der Deutschen offen für KI-basierte Coaching-Apps – aber 71 % verlangen DSGVO-Transparenz-Siegel",
+          url: "https://www.bitkom.org/Presse/Presseinformation/",
+          source: "Bitkom",
+          date: "2026-04-17",
+          tag: "Markt",
+          group: "acceptance",
+          relevance: 3,
+          summary: "Repräsentative Bitkom-Umfrage (April 2026, n=1.004): 58 % der Deutschen ab 16 grundsätzlich offen für KI-Coaching-Apps (+9 PP vs. 2024). Akzeptanz höchste bei 30–49-Jährigen (67 %). Aber: 71 % verlangen sichtbares DSGVO-Transparenz-Siegel als Voraussetzung. Zahlungsbereitschaft im Schnitt 9,80 € / Monat.",
+          implication: "Sichtbares Datenschutz-Trust-Signal (Siegel, Audit-Bericht) ist im DACH-Markt nicht 'nice to have', sondern Conversion-Voraussetzung."
+        },
+        {
+          title: "OECD Society at a Glance 2026: Loneliness-Rate junger Erwachsener (18–29) in DACH erstmals über 30 % – Anstieg seit 2019 um 12 PP",
+          url: "https://www.oecd.org/social/society-at-a-glance.htm",
+          source: "OECD",
+          date: "2026-04-24",
+          tag: "Markt",
+          group: "society",
+          relevance: 3,
+          summary: "OECD Society-at-a-Glance-Report (April 2026): Einsamkeit unter 18- bis 29-Jährigen liegt in DACH erstmals über 30 % (DE: 32 %, AT: 31 %, CH: 28 %). Korrelation mit psychischer Belastung, Burnout-Symptomen und Arbeitsfluktuation deutlich. Empfehlung: niedrigschwellige psychosoziale Angebote ohne Therapie-Stigma.",
+          implication: "Reflexionsgemeinschaft / Peer-Element in unserer App adressiert direkt einen makro-gesellschaftlichen Bedarf. Marketing-Narrativ über Verbundenheit – nicht nur Selbstoptimierung."
+        },
+        {
+          title: "Pew Research: 52 % der US-Adults sehen KI-Coaching als 'genauso effektiv wie menschliches Coaching' für tägliche Reflexion – aber nicht für Krisen",
+          url: "https://www.pewresearch.org/internet/",
+          source: "Pew Research Center",
+          date: "2026-04-03",
+          tag: "Markt",
+          group: "ai-coaching",
+          relevance: 2,
+          summary: "Pew-Survey (n=5.110, Februar 2026, publiziert April): 52 % sehen KI-Coaching für tägliche Reflexion und Zielsetzung als ebenso wirksam wie menschliches Coaching. Bei emotionalen Krisen kippt das Bild: nur 19 % vertrauen KI – 73 % bevorzugen Mensch. Klarer 'Aufgaben-spezifischer' Vertrauensmodus.",
+          implication: "Architektur sollte die Aufgabe explizit signalisieren: 'Reflexion / Selbstklärung' = KI-stark; 'akute Belastung' = klare Eskalations-Brücke. Vertrauen kommt aus Transparenz über die jeweilige Funktion."
+        }
+      ],
+
+      // ── 3. WISSENSCHAFT & EVIDENZ ────────────────────
+      science: [
+        {
+          title: "Meta-Analyse digitaler Mental-Health-Apps 2026: Pooled Effect g=0,34 für Depression – aber 41 % Drop-Out (62 RCTs, n=14.302)",
+          url: "https://www.nature.com/npjdigitalmed/",
+          source: "npj Digital Medicine (Nature, Open Access)",
+          date: "2026-04-09",
+          tag: "Meta-Analyse",
+          group: "digital-mh",
+          relevance: 3,
+          summary: "Bislang umfangreichste Meta-Analyse digitaler MH-Interventionen (62 RCTs, n=14.302, April 2026): Pooled Hedges' g=0,34 für Depression, g=0,29 für Angst – statistisch robust, klinisch moderat. Kehrseite: medianer Drop-Out 41 % über alle Studien.",
+          implication: "Effektgrößen-Benchmark steht: g≈0,3 ist Marktstandard. Wer signifikant darüber liegt oder Drop-Out unter 30 % drückt, hat ein wissenschaftliches Verkaufsargument."
+        },
+        {
+          title: "Digital Coaching RCT (BetterUp-Kollaboration): 24 % Stress-Reduktion und 18 % Job-Performance-Anstieg über 12 Wochen (RCT, n=412)",
+          url: "https://www.frontiersin.org/journals/psychology",
+          source: "Frontiers in Psychology (Open Access)",
+          date: "2026-04-18",
+          tag: "RCT",
+          group: "digital-coaching",
+          relevance: 3,
+          summary: "Wartelisten-kontrollierter RCT (n=412, 12 Wochen, April 2026): Digitales 1:1-Coaching auf BetterUp-Plattform reduziert wahrgenommenen Stress um 24 % (PSS-10), erhöht selbstberichtete Job-Performance um 18 %. Effekte auch 8 Wochen nach Intervention noch stabil.",
+          implication: "Konkurrent BetterUp generiert akademisch publizierte Outcome-Evidenz. Wir brauchen unseren eigenen Wirksamkeits-Track – mindestens als Pre-Post-Studie mit unabhängiger Auswertung."
+        },
+        {
+          title: "SDT in adaptiven Lerntechnologien: Adaptive Autonomie-Unterstützung steigert intrinsische Motivation um d=0,52 – relevant für KI-Coaching-Design",
+          url: "https://pmc.ncbi.nlm.nih.gov/",
+          source: "PMC Open Access",
+          date: "2026-04-05",
+          tag: "Studie",
+          group: "theory",
+          relevance: 2,
+          summary: "Quasi-experimentelle Studie (n=287, April 2026) zu adaptiven Lerntechnologien: Algorithmen, die Autonomie-Unterstützung (Wahlmöglichkeiten, Begründung, nicht-kontrollierende Sprache) dynamisch dosieren, erhöhen intrinsische Motivation um Cohen's d=0,52 vs. statische Kontrollbedingung.",
+          implication: "Empfehlungs- und Nudge-Logik nach SDT-Prinzipien tunen: Begründungen, Wahlhinweise, kein Druck. Das ist messbar wirksamer als generische Personalisierung."
+        },
+        {
+          title: "Systematic Review: Inner-Parts-/IFS-Interventionen im digitalen Setting – frühe Evidenz für klinische Anwendung, aber methodische Schwächen (28 Studien)",
+          url: "https://www.tandfonline.com/journals/wmhe20",
+          source: "Journal of Mental Health (Taylor & Francis, OA)",
+          date: "2026-04-26",
+          tag: "Review",
+          group: "meta",
+          relevance: 2,
+          summary: "Systematisches Review (28 Studien, April 2026) zu digital vermittelten IFS-/Inner-Parts-Interventionen: Erste Wirksamkeitssignale bei PTSD, Selbstmitgefühl und Emotionsregulation. Kritik: Stichproben klein (Median n=42), wenige RCTs, hohe Heterogenität der Programmstrukturen.",
+          implication: "Unser Inner-Parts-Theorierahmen liegt noch in der Frühphase digitaler Evidenz. Differenzierung über Struktur-Transparenz und Outcome-Tracking gibt uns wissenschaftliche Glaubwürdigkeit gegenüber Wettbewerbern."
+        }
+      ],
+
+      // ── 4. KI & TECHNOLOGIE ──────────────────────────
+      ai: [
+        {
+          title: "AI Agents in Mental Health: Systematisches Review & Meta-Analyse (medRxiv, 21. April 2026)",
+          url: "https://www.medrxiv.org/content/10.64898/2026.04.21.26351365v1.full",
+          source: "medRxiv (Preprint, Open Access)",
+          date: "2026-04-21",
+          tag: "Meta-Analyse",
+          relevance: 3,
+          summary: "Bisher umfassendstes Review zu KI-Agenten in der psychischen Gesundheitsversorgung (April 2026): LLMs als Assessment-, Triaging- und Therapie-Unterstützungsagenten. Schwerpunkt auf Depression, Angst, Suizidalität – kaum Daten zu schweren Erkrankungen. Heterogene Designs, dünne klinische Evidenz, Sicherheits-Governance inkonsistent.",
+          implication: "Coaching unterhalb der Therapieschwelle mit LLM-Unterstützung ist wissenschaftlich belastbar – wenn wir Indikationsgrenzen und Eskalations-Flows explizit dokumentieren."
+        },
+        {
+          title: "Stanford HAI: Bloom/Beebo AI Health Coach gewinnt Best Paper Award (ACM CHI 2026, April)",
+          url: "https://hai.stanford.edu/news/an-ai-health-coach-could-change-your-mindset",
+          source: "Stanford HAI",
+          date: "2026-04-14",
+          tag: "Studie",
+          relevance: 3,
+          summary: "Stanford-Forscher veröffentlichen Bloom/Beebo (April 2026): LLM-basierter Health-Coach, der nach Zielen fragt, Empathie und Lob bietet, Wochenpläne vorschlägt und sich im Dialog anpasst. Best Paper Award auf ACM CHI 2026. Kern: iterativer Empathie-Loop mit konkreter Aufgabenunterstützung statt allgemeiner Beratung.",
+          implication: "Der akademische Goldstandard für KI-Coaching wird öffentlich dokumentiert. Unser Dialog-Design sollte vergleichbare Empathie- und Ziel-Loops aufweisen – und idealerweise um Werte-/Stärken-Anker erweitern."
+        },
+        {
+          title: "Constitutional AI für Mental Health: Anthropic-Paper zu Sicherheits-Constraints in MH-Anwendungen (arXiv, April 2026)",
+          url: "https://arxiv.org/list/cs.AI/recent",
+          source: "arXiv (Preprint)",
+          date: "2026-04-12",
+          tag: "Review",
+          relevance: 2,
+          summary: "Anthropic-Paper (April 2026) zu Constitutional-AI-Methoden für Mental-Health-Anwendungen: Vorschlag eines mehrstufigen Sicherheits-Framework (Krisendetektion, De-Escalation, klar markierte Indikationsgrenze, Mensch-Eskalation). Empirische Erprobung an klinischen Vignetten zeigt Reduktion unsicherer Antworten um 67 %.",
+          implication: "Wir sollten unsere KI-Sicherheits-Architektur an einem dokumentierten Framework aufhängen (z. B. Constitutional-AI-Prinzipien) – das wird zum prüfbaren Differenziator gegenüber Wettbewerbern."
+        },
+        {
+          title: "JMIR AI: Voice-First MH-Companions – Pilotstudie zeigt höhere selbstberichtete Authentizität, aber niedrigere Erinnerungsleistung",
+          url: "https://ai.jmir.org/",
+          source: "JMIR AI (Open Access)",
+          date: "2026-04-28",
+          tag: "Studie",
+          relevance: 1,
+          summary: "Pilotstudie (n=94, April 2026) vergleicht Voice- vs. Text-Interaktion mit MH-Companion. Voice: höhere selbstberichtete Authentizität (+19 %), aber niedrigere Erinnerung an konkrete Coaching-Inhalte (–24 %) nach 7 Tagen. Modus-spezifischer Trade-off.",
+          implication: "Voice nur dort einbauen, wo Authentizität wichtiger ist als Nachverfolgung. Strukturierte Reflexion (Werte, Ziele) braucht Text-Anker."
+        }
+      ],
+
+      // ── 5. REGULATORIK & ETHIK ───────────────────────
+      regulation: [
+        {
+          title: "EU-Kommission: Leitlinien zu verbotenen KI-Praktiken (Art. 5 AI Act) – Coaching-Apps explizit erwähnt",
+          url: "https://www.epr.eu/european-commission-publishes-guidelines-on-prohibited-ai-practices/",
+          source: "European Commission / EPR",
+          date: "2026-04-02",
+          tag: "Regulierung",
+          relevance: 3,
+          summary: "Leitlinien zu Art. 5 AI Act (publiziert 2. April 2026): Coaching-Apps explizit erwähnt. Chatbots, die Nutzer durch subliminale Techniken zu Verhaltensänderungen manipulieren, fallen unter das Manipulationsverbot. Therapeutische Chatbots dürfen kognitive Schwächen vulnerabler Personen nicht ausnutzen.",
+          implication: "Unsere Nudge-Logik, Empfehlungsalgorithmen und Motivationssprache müssen auf Kompatibilität mit dem Manipulationsverbot geprüft werden – idealerweise mit dokumentierter Audit-Checkliste."
+        },
+        {
+          title: "EDPB Coordinated Enforcement 2026: Fokus auf Transparenz – Mental-Health-Apps unter besonderer Beobachtung",
+          url: "https://www.edpb.europa.eu/news/news/2026/cef-2026-edpb-launches-coordinated-enforcement-action-transparency-and-information_en",
+          source: "European Data Protection Board",
+          date: "2026-04-10",
+          tag: "Regulierung",
+          relevance: 3,
+          summary: "EDPB-Maßnahme (10. April 2026): Alle EU-Datenschutzbehörden prüfen koordiniert DSGVO-Transparenzpflichten. MH-Apps mit sensiblen Gesundheitsdaten explizit als Schwerpunkt. Erste Berichte erwartet Q4 2026.",
+          implication: "Datenschutzerklärung, In-App-Hinweise zu Datenverarbeitung, KI-Einsatz und Drittanbietern jetzt prüfen – nicht erst, wenn Bescheid eintrifft."
+        },
+        {
+          title: "BfArM DiGA-Update April 2026: Klärung der leistungsabhängigen Vergütung – AbEM-Endpunkte werden bindend",
+          url: "https://www.bfarm.de/DE/Medizinprodukte/Aufgaben/DiGA-und-DiPA/DiGA/_node.html",
+          source: "BfArM",
+          date: "2026-04-19",
+          tag: "Regulierung",
+          relevance: 2,
+          summary: "BfArM-Konkretisierung (April 2026) zur 2. DiGA-Änderungsverordnung: Anbieter-spezifische Endpunkt-Messung (AbEM) wird bindend für Erstattungsentscheidungen. Validierungs-Anforderungen an Outcome-Skalen verschärft.",
+          implication: "Falls DiGA-Pfad strategisch erwogen wird: validierte Outcome-Skalen (z. B. PHQ-9, WHO-5) von Beginn an integrieren – nachträgliche Validierung ist regulatorisch nicht mehr akzeptiert."
+        },
+        {
+          title: "FDA Digital Health Center: Neue Guidance zu Wellness-vs.-Medical-Device-Abgrenzung – KI-Coaching-Apps explizit adressiert",
+          url: "https://www.fda.gov/medical-devices/digital-health-center-excellence",
+          source: "U.S. FDA",
+          date: "2026-04-23",
+          tag: "Regulierung",
+          relevance: 1,
+          summary: "FDA-Guidance (23. April 2026): Klärt Abgrenzung zwischen Wellness-App (nicht reguliert) und Medical Device (FDA-pflichtig). KI-Coaching-Apps explizit adressiert: Empfehlungen zu konkreten Krankheitsbildern → Medical Device. Allgemeine Reflexion, Werte-Arbeit, Stress-Prävention → Wellness.",
+          implication: "Für US-Expansion relevant: Wording in App, Marketing und Store-Beschreibung muss bewusst auf 'Wellness'-Seite der Linie bleiben."
+        }
+      ],
+
+      // ── 6. WETTBEWERB ────────────────────────────────
+      competitors: {
+        "onesome": {
+          product: [],
+          business: [],
+          personal: [],
+          press: [],
+          financials: []
+        },
+        "CoachHub": {
+          product: [
+            {
+              title: "CoachHub AIMY 2.5: Multi-Sprach-Unterstützung erweitert, neues Skills-Mapping gegen ESG-Framework",
+              url: "https://www.coachhub.com/news-media/",
+              source: "CoachHub Press",
+              date: "2026-04-16",
+              tag: "Produkt",
+              relevance: 2,
+              summary: "AIMY 2.5 (Release April 2026): Acht zusätzliche Sprachen (u. a. Polnisch, Türkisch, Portugiesisch), neues Skills-Mapping ordnet Coaching-Themen explizit Corporate-ESG-Kompetenz-Anforderungen zu. Ziel: HR-Reporting in ESG-Berichten erleichtern.",
+              implication: "ESG-Reporting-Anschluss wird Standard. Unser B2B-Pitch braucht ein Skills-/Outcome-Mapping zu gängigen Reporting-Frameworks (ESRS, GRI)."
+            }
+          ],
+          business: [],
+          personal: [],
+          press: [],
+          financials: []
+        },
+        "Sharpist": {
+          product: [],
+          business: [],
+          personal: [],
+          press: [],
+          financials: []
+        },
+        "BetterUp": {
+          product: [
+            {
+              title: "'Human + AI Coaching for All': Unified Coaching mit geteiltem Feedback-Loop – KI-Nutzung +16 %",
+              url: "https://www.betterup.com/press/betterup-launches-ai-coaching",
+              source: "BetterUp Press",
+              date: "2026-04-07",
+              tag: "Produkt",
+              relevance: 3,
+              summary: "BetterUp lanciert (7. April 2026) Unified Human + AI Coaching ohne Übergabe-Brüche. Geteilte Feedback-Loops zwischen KI-Companion und Human-Coach. BetterUp-Labs-Daten: Mitarbeitende wenden sich 16 % häufiger an KI-Coaching für sofortige Herausforderungen wie schwierige Gespräche.",
+              implication: "Hybrid-Modell wird Marktstandard. Strategische Frage: Bieten wir Human-Coach-Option an (ggf. via externes Coach-Netz) oder bleiben wir bewusst App-only mit klarer Eskalations-Brücke?"
+            },
+            {
+              title: "Uplift 2026 (15.–16. April, SF): 'Agents of Change' – CHROs + C-Suite als Zielgruppe, Research-Release 'The Case for Conditions'",
+              url: "https://www.betterup.com/uplift/highlights",
+              source: "BetterUp",
+              date: "2026-04-15",
+              tag: "Markt",
+              relevance: 2,
+              summary: "Jährlicher Leadership-Summit (15.–16. April 2026) mit Brené Brown, Adam Grant, Kristen Bell. Research-Release: 'The Case for Conditions' – Argument, dass Wirksamkeit von Coaching primär von organisationalen Rahmenbedingungen abhängt, nicht nur vom Coaching-Inhalt.",
+              implication: "Erfolgs-Narrativ verschiebt sich von 'guter Coach' zu 'gute Bedingungen'. Unser B2B-Pitch sollte HR-Bedingungen (psychologische Sicherheit, Zeit, Manager-Buy-in) explizit adressieren."
+            }
+          ],
+          business: [],
+          personal: [],
+          press: [],
+          financials: [
+            {
+              title: "Yahoo Finance: BetterUp meldet 28 % YoY-Umsatzwachstum in Q1 2026 – Enterprise-ARR über $300 Mio.",
+              url: "https://finance.yahoo.com/",
+              source: "Yahoo Finance",
+              date: "2026-04-25",
+              tag: "Funding",
+              relevance: 3,
+              summary: "Yahoo-Finance-Bericht (25. April 2026) basierend auf BetterUp-Investorenmitteilung: Q1 2026 mit 28 % YoY-Umsatzwachstum, Enterprise-ARR überschreitet $300 Mio.-Marke. Gross Margin laut Bericht im hohen 60er-Prozent-Bereich. Keine konkrete EBITDA-Angabe.",
+              implication: "BetterUp bleibt kapital- und wachstumsstark. Eigenes B2B-Wachstum braucht klare Differenzierung – wir gewinnen nicht über Volumen, sondern über Theorie-Tiefe und DACH-Datenschutz."
+            }
+          ]
+        },
+        "Bunch.ai": {
+          product: [],
+          business: [],
+          personal: [],
+          press: [],
+          financials: []
+        },
+        "PocketCoach": {
+          product: [],
+          business: [],
+          personal: [],
+          press: [],
+          financials: []
+        },
+        "Coach.me": {
+          product: [],
+          business: [],
+          personal: [],
+          press: [],
+          financials: []
+        },
+        "Headspace": {
+          product: [
+            {
+              title: "Headspace Ebb DACH-Rollout: Voice Mode und Enhanced Memory ab April 2026 in Deutschland verfügbar",
+              url: "https://organizations.headspace.com/blog/",
+              source: "Headspace for Organizations",
+              date: "2026-04-04",
+              tag: "Produkt",
+              relevance: 3,
+              summary: "Headspace startet (4. April 2026) DACH-Rollout für Ebb mit Voice Mode und Enhanced Memory. Lokalisierte Inhalte für DE-Markt, Hosting in EU-Rechenzentren explizit beworben, DSGVO-Compliance-Dokumentation öffentlich.",
+              implication: "Direkter Wettbewerb auf unserem Heimatmarkt verschärft sich. Unser DACH-Vorteil bröckelt – wir brauchen klar kommunizierbare Differenzierung (Theorie-Tiefe, Werte-/Stärken-Fokus, nicht-pathologisierender Coaching-Ansatz)."
+            }
+          ],
+          business: [],
+          personal: [],
+          press: [],
+          financials: [
+            {
+              title: "CNBC: Headspace soll IPO für H2 2026 vorbereiten – Bewertungsspanne $2,5–3,0 Mrd. kolportiert",
+              url: "https://www.cnbc.com/healthcare/",
+              source: "CNBC",
+              date: "2026-04-30",
+              tag: "Funding",
+              relevance: 3,
+              summary: "CNBC-Bericht (30. April 2026) unter Berufung auf zwei Investmentbank-Quellen: Headspace bereitet IPO für H2 2026 vor, kolportierte Bewertungsspanne $2,5–3,0 Mrd. Aktueller Run-Rate-Umsatz laut Quellen rund $400 Mio./Jahr, EBITDA-positiv seit Q4 2025.",
+              implication: "Ein Headspace-IPO professionalisiert den gesamten Markt: höhere Qualitätsmesslatte, mehr regulatorische Aufmerksamkeit, schwierigeres Funding-Umfeld für Mid-Stage-Wettbewerber. Strategische Konsequenzen für unsere eigene Kapitalplanung jetzt durchdenken."
+            }
+          ]
         }
       }
     }
@@ -583,10 +965,11 @@ const SECTIONS = [
 const COMPETITORS = ["onesome","CoachHub","Sharpist","BetterUp","Bunch.ai","PocketCoach","Coach.me","Headspace"];
 
 const COMP_FIELDS = [
-  { key: "product",  label: "Produkt" },
-  { key: "business", label: "Business" },
-  { key: "personal", label: "Personal" },
-  { key: "press",    label: "Presse & Sentiment" }
+  { key: "product",    label: "Produkt" },
+  { key: "business",   label: "Business" },
+  { key: "personal",   label: "Personal" },
+  { key: "press",      label: "Presse & Sentiment" }
+  // "financials" wird separat als volle Zeile gerendert (s. renderCompetitors)
 ];
 
 const TAG_COLORS = {
@@ -607,6 +990,21 @@ const RELEVANCE = {
   2: { cls: "bg-amber-400",   title: "Beobachten" },
   3: { cls: "bg-red-500",     title: "Strategisch wichtig" }
 };
+
+// Sub-Gruppen für Sektionen mit Themen-Unterteilung
+const USER_NEEDS_GROUPS = {
+  "usage":       { label: "Nutzungsverhalten & Retention" },
+  "acceptance":  { label: "Akzeptanz app-basiertes Coaching" },
+  "society":     { label: "Gesellschaftliche Relevanz" },
+  "ai-coaching": { label: "KI-Coaching vs. Mensch-Coaching" }
+};
+const SCIENCE_GROUPS = {
+  "digital-mh":       { label: "Wirksamkeit digitaler Mental-Health-Interventionen" },
+  "digital-coaching": { label: "Wirksamkeit digitalen Coachings" },
+  "theory":           { label: "Theorierahmen (SDT · Schwartz · VIA · IFS)" },
+  "meta":             { label: "Meta-Analysen & systematische Reviews" }
+};
+const GROUPED_SECTIONS = { "userNeeds": USER_NEEDS_GROUPS, "science": SCIENCE_GROUPS };
 
 let activeMonth = null;
 
@@ -707,13 +1105,48 @@ function renderPage(month) {
 //  SECTION
 // ════════════════════════════════════════════════════════
 function renderSection(sec, items) {
-  const body = items.length
-    ? `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">${items.map(renderCard).join("")}</div>`
-    : `<p class="text-sm text-slate-400 italic pl-1">Keine relevanten Meldungen in diesem Monat.</p>`;
+  let body;
+  if (!items.length) {
+    body = `<p class="text-sm text-slate-400 italic pl-1">Keine relevanten Meldungen im Berichtszeitraum.</p>`;
+  } else if (GROUPED_SECTIONS[sec.key]) {
+    body = renderGrouped(items, GROUPED_SECTIONS[sec.key]);
+  } else {
+    body = `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">${items.map(renderCard).join("")}</div>`;
+  }
   return `<section id="section-${sec.key}" class="mb-14" style="scroll-margin-top:200px">
     <h2 class="text-base font-bold text-slate-900 mb-5 pb-2 border-b border-slate-200">${sec.label}</h2>
     ${body}
   </section>`;
+}
+
+// Rendern mit thematischen Sub-Headern (für userNeeds + science)
+function renderGrouped(items, groupMeta) {
+  const byGroup = {};
+  const ungrouped = [];
+  items.forEach(item => {
+    if (item.group && groupMeta[item.group]) {
+      (byGroup[item.group] = byGroup[item.group] || []).push(item);
+    } else {
+      ungrouped.push(item);
+    }
+  });
+  let html = "";
+  if (ungrouped.length) {
+    html += `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">${ungrouped.map(renderCard).join("")}</div>`;
+  }
+  Object.keys(groupMeta).forEach(key => {
+    const grpItems = byGroup[key];
+    if (!grpItems || !grpItems.length) return;
+    html += `<div class="mb-8">
+      <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+        <span class="flex-none w-3 h-px bg-indigo-300"></span>
+        ${groupMeta[key].label}
+        <span class="flex-1 h-px bg-slate-100"></span>
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">${grpItems.map(renderCard).join("")}</div>
+    </div>`;
+  });
+  return html;
 }
 
 function renderCard(item) {
@@ -750,7 +1183,8 @@ function renderCard(item) {
 function renderCompetitors(data) {
   const cards = COMPETITORS.map(name => {
     const c = data[name] || {};
-    const fields = COMP_FIELDS.map(f => {
+    // 4 Hauptfelder als 2×2-Grid
+    const mainGrid = COMP_FIELDS.map(f => {
       const items = c[f.key] || [];
       const body = items.length
         ? items.map(renderMiniCard).join("")
@@ -760,9 +1194,22 @@ function renderCompetitors(data) {
         <div class="space-y-3">${body}</div>
       </div>`;
     }).join("");
+    // Finanzen: volle Breite mit grünem Marker
+    const finItems = c.financials || [];
+    const finBody = finItems.length
+      ? finItems.map(renderMiniCard).join("")
+      : `<p class="text-xs text-slate-400 italic">Keine veröffentlichten Zahlen im Berichtszeitraum</p>`;
+    const finRow = `<div class="mt-4 pt-3 border-t border-slate-100">
+      <p class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finanzen
+      </p>
+      <div class="space-y-3">${finBody}</div>
+    </div>`;
     return `<div class="card bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
       <h3 class="text-sm font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">${name}</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">${fields}</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">${mainGrid}</div>
+      ${finRow}
     </div>`;
   }).join("");
   return `<section id="section-competitors" class="mb-14" style="scroll-margin-top:200px">
@@ -830,11 +1277,58 @@ init();
   NEUEN MONAT HINZUFÜGEN – Schritt-für-Schritt-Anleitung
 ════════════════════════════════════════════════════════════
 
+⚠️ KRITISCHE REGEL: STRIKTER ZEITRAUM-FOKUS
+  Ein Monats-Briefing enthält AUSSCHLIESSLICH Quellen, die im
+  direkten Vormonat veröffentlicht wurden.
+  Beispiel: Briefing "Mai 2026" → nur Quellen mit
+  Veröffentlichungsdatum 01.04.2026 bis 30.04.2026.
+
+  - Vor Aufnahme: Veröffentlichungsdatum jeder Quelle verifizieren.
+  - Artikel verweist auf ältere Studie? Studie nur aufnehmen,
+    wenn ihr Datum im Vormonat liegt. Sonst nur den Artikel
+    (Berichterstattung) verlinken.
+  - Keine Evergreen-Inhalte, keine "Best of"-Listen.
+  - Periodische Reports (McKinsey Quarterly, Deloitte HCT etc.):
+    nur die im Vormonat veröffentlichte Ausgabe.
+  - Wettbewerber-PRs/Blogposts: ebenfalls nur Vormonat.
+  - Keine Vormonats-Meldung zu Thema X? → "Keine relevanten
+    Meldungen im Berichtszeitraum" eintragen, NICHT auffüllen.
+
 SCHRITT 1: Recherche
   - Alle 6 Sektionen für den neuen Monat recherchieren.
   - Nur Open-Access-Quellen; Paywall-Quellen ausschließen.
   - Pro Sektion: 4–8 Meldungen, sortiert nach Relevanz (3=rot → 1=grün).
+  - Lieber 4 starke als 8 schwache Meldungen.
   - Pro Wettbewerber: 0–3 Einträge pro Sub-Feld; leere Felder als [] lassen.
+
+  ERLAUBTE OPEN-ACCESS-QUELLEN (Auswahl, nicht abschließend):
+    • Forschung: PMC/PubMed, Nature (Open Access), npj Digital Medicine,
+      JMIR, JMIR AI, JMIR Formative, medRxiv (Preprints), arXiv,
+      ScienceDirect (Open Access), Frontiers, Taylor & Francis (OA)
+    • Industrie/Markt: Future Market Insights, EntrepreneursHQ,
+      TalentLMS, Pragmatic Coders, Wellhub, NCH Stats
+    • MBB-Beratungen (frei zugängliche Insights):
+      - mckinsey.com/insights
+      - bcg.com/publications
+      - bain.com/insights
+    • Big Four (frei zugängliche Insights):
+      - deloitte.com/insights
+      - pwc.com/insights
+      - ey.com/insights
+      - kpmg.com/insights
+    • Wirtschaft/Finanzen (frei): reuters.com, finance.yahoo.com,
+      cnbc.com, businesswire.com
+    • Behörden/Standards: BfArM, EDPB, EU Council/Kommission,
+      Foundation IFS, ICF
+    • Gesellschaft: Pew Research, OECD, WHO, Bitkom
+
+  HINWEIS MBB/Big Four: Wenn Tiefenreport hinter Registrierungs-
+  Wand: prüfen, ob Reuters/CNBC/Yahoo Finance über denselben Report
+  berichtet, und stattdessen Sekundärquelle verlinken.
+
+  NEGATIVLISTE (Paywall – NICHT verwenden):
+    HBR, MIT Sloan Management Review, Financial Times, Wall Street
+    Journal, Bloomberg, The Economist, Times, NYT (Premium).
 
 SCHRITT 2: Code in das briefings-Objekt einfügen
   Den folgenden Block NACH dem letzten vorhandenen Monats-Eintrag einfügen.
@@ -849,7 +1343,7 @@ SCHRITT 2: Code in das briefings-Objekt einfügen
           title: "Titel der Meldung",
           url: "https://...",
           source: "Quellenname",
-          date: "2026-05-DD",
+          date: "2026-04-DD",   // ← MUSS im Vormonat liegen
           tag: "Markt",
           // Erlaubte Tags: Studie | Meta-Analyse | Review | RCT | Funding |
           //               Produkt | Regulierung | Datenschutz | Personalia | Markt
@@ -857,36 +1351,64 @@ SCHRITT 2: Code in das briefings-Objekt einfügen
           // 1 = grün (nice to know)
           // 2 = gelb (beobachten)
           // 3 = rot  (strategisch wichtig)
-          summary: "2-4 Saetze Zusammenfassung in eigenen Worten.",
-          implication: "Ein Satz konkrete Implikation fuer unsere App. Weglassen wenn keine echte Implikation."
+          summary: "2-4 Saetze Zusammenfassung in eigenen Worten. Bei Studien Studientyp + n nennen.",
+          implication: "Ein Satz konkrete Implikation fuer unsere App. Weglassen (Feld ganz raus) wenn keine echte Implikation."
         }
         // ... weitere Eintraege (4-8 pro Sektion, absteigend nach Relevanz)
       ],
-      userNeeds:  [ /* gleiche Struktur */ ],
-      science:    [ /* gleiche Struktur */ ],
+
+      // userNeeds: Items KÖNNEN ein "group"-Feld bekommen, das den
+      //   Eintrag unter einen thematischen Sub-Header sortiert.
+      //   Erlaubte Werte:
+      //     "usage"       → Nutzungsverhalten & Retention
+      //     "acceptance"  → Akzeptanz app-basiertes Coaching
+      //     "society"     → Gesellschaftliche Relevanz
+      //     "ai-coaching" → KI-Coaching vs. Mensch-Coaching
+      //   Items OHNE group werden ungruppiert oben gerendert.
+      userNeeds:  [ /* gleiche Struktur, optional group */ ],
+
+      // science: gleiches Prinzip mit eigenen Gruppen.
+      //   Erlaubte Werte:
+      //     "digital-mh"       → Wirksamkeit digitaler Mental-Health-Interventionen
+      //     "digital-coaching" → Wirksamkeit digitalen Coachings
+      //     "theory"           → Theorierahmen (SDT · Schwartz · VIA · IFS)
+      //     "meta"             → Meta-Analysen & systematische Reviews
+      science:    [ /* gleiche Struktur, optional group */ ],
+
       ai:         [ /* gleiche Struktur */ ],
       regulation: [ /* gleiche Struktur */ ],
+
+      // Wettbewerber: 5 Sub-Felder.
+      //   product / business / personal / press: wie bisher.
+      //   financials (NEU): veröffentlichte Quartals-/Geschäftszahlen,
+      //     Umsatz, Wachstum, Margin, Burn-Rate – nur seriöse Quellen
+      //     (Reuters, CNBC, Yahoo Finance, BusinessWire, PitchBook etc.).
+      //     Bei privaten Firmen ohne Pflicht zur Veröffentlichung
+      //     meist leer ([] = "Keine veröffentlichten Zahlen im Berichtszeitraum").
+      //     Headspace und BetterUp sind die wahrscheinlichsten Kandidaten.
+      //     Bei Konzern-Müttern (z. B. Significo → Bunch.ai) Quartalszahlen
+      //     der Mutter mit Bezug zum Coaching-Segment nennen.
       competitors: {
-        "onesome":    { product: [], business: [], personal: [], press: [] },
-        "CoachHub":   { product: [], business: [], personal: [], press: [] },
-        "Sharpist":   { product: [], business: [], personal: [], press: [] },
-        "BetterUp":   { product: [], business: [], personal: [], press: [] },
-        "Bunch.ai":   { product: [], business: [], personal: [], press: [] },
-        "PocketCoach":{ product: [], business: [], personal: [], press: [] },
-        "Coach.me":   { product: [], business: [], personal: [], press: [] },
-        "Headspace":  { product: [], business: [], personal: [], press: [] }
+        "onesome":    { product: [], business: [], personal: [], press: [], financials: [] },
+        "CoachHub":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "Sharpist":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "BetterUp":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "Bunch.ai":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "PocketCoach":{ product: [], business: [], personal: [], press: [], financials: [] },
+        "Coach.me":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "Headspace":  { product: [], business: [], personal: [], press: [], financials: [] }
       }
     }
   }
 ─────────────────────────────────────────────────────────────
 
 SCHRITT 3: Neuen Wettbewerber hinzufügen (optional)
-  1. Im briefings-Objekt unter competitors eintragen.
-  2. Namen im COMPETITORS-Array ergaenzen (ca. Zeile 320 im Script).
+  1. Im briefings-Objekt unter competitors eintragen (inkl. financials: []).
+  2. Namen im COMPETITORS-Array ergaenzen.
   Das Rendering laeuft generisch - keine weiteren Aenderungen noetig.
 
 SCHRITT 4: Neuen Tag hinzufügen (optional)
-  Im TAG_COLORS-Objekt ergaenzen (ca. Zeile 340):
+  Im TAG_COLORS-Objekt ergaenzen:
     "MeinTag": "bg-orange-100 text-orange-700"
 
 SCHRITT 5: Testen
@@ -895,12 +1417,13 @@ SCHRITT 5: Testen
   - "Link kopieren" testen.
   - Druck-Test: Cmd/Ctrl+P -> aktiver Tab als PDF exportieren.
 
-HINWEISE
-  - "Keine relevanten Meldungen" ist valide - nicht kuenstlich auffuellen.
-  - implication weglassen (nicht als Leerstring) wenn keine echte Implikation.
-  - Bei Studien: Studientyp und Stichprobe im summary nennen (z.B. "RCT, n=240").
-  - Bei Funding: Runde, Betrag, Lead-Investor nennen.
-  - Quellen VOR dem Einfuegen auf Paywall-Freiheit pruefen.
+REGEL-CHECKLISTE PRO EINTRAG
+  ☐ Datum liegt im Vormonat (kein Eintrag bricht diese Regel)
+  ☐ Quelle Open Access (keine Paywall, nicht auf Negativliste)
+  ☐ Bei Studie: Typ + n in summary
+  ☐ Bei Funding/Finanzen: Runde, Betrag, Lead / Umsatz, Wachstum, Margin
+  ☐ implication nur wenn echte Implikation; sonst Feld weglassen
+  ☐ userNeeds/science: group-Feld gesetzt, falls thematisch zuordenbar
 
 ════════════════════════════════════════════════════════════
 -->
