@@ -581,6 +581,97 @@ const briefings = {
         "Headspace":  { product: [], business: [], personal: [], press: [], financials: [] }
       }
     }
+  },
+
+  // ════════════════════════════════════════════════════════
+  //  JUNI 2026 – Quellen ausschließlich aus Juni 2026
+  //  (01.06.2026 – 30.06.2026, web-verifiziert, Open Access)
+  //  Monat stark regulatorik-/KI-sicherheitslastig; Markt,
+  //  Wissenschaft und Wettbewerb ohne Juni-Meldung → bewusst
+  //  "Keine relevanten Meldungen im Berichtszeitraum".
+  // ════════════════════════════════════════════════════════
+  "2026-06": {
+    label: "Juni 2026",
+    sections: {
+
+      // ── 1. MARKT & NACHFRAGE ──────────────────────────
+      // Keine im Juni 2026 veröffentlichte, verifizierte Quelle
+      // (Marktreports durchweg Evergreen ohne Juni-Datum). → leer.
+      market: [],
+
+      // ── 2. NUTZERVERHALTEN & BEDÜRFNISSE ─────────────
+      userNeeds: [
+        {
+          title: "APA: Patienten bringen KI eigenständig in die Therapie – 68 % fühlten sich validiert, 35 % behandeln KI wie eine 'zusätzliche Fachkraft'",
+          url: "https://www.apa.org/pubs/reports/chatbots-mental-health-2026",
+          source: "American Psychological Association",
+          date: "2026-06",
+          tag: "Akzeptanz",
+          group: "acceptance",
+          relevance: 2,
+          summary: "Survey (Juni 2026) unter mehr als 1.200 lizenzierten US-Psychologen: 77 % sprachen bereits mit Patienten, die KI zur Unterstützung genutzt haben; 33 % berichten von Patienten, die KI als therapeutisches Werkzeug einsetzen, 35 % von Patienten, die KI wie eine 'zusätzliche Fachkraft' behandeln. Unter den KI-nutzenden Patienten sprachen 71 % über psychische Themen, 68 % fühlten sich validiert oder unterstützt – 25 % zeigten jedoch ungesunde Kommunikationsmuster.",
+          implication: "Produkt: Nutzer bringen KI-gestützte Reflexion ohnehin in ihre Entwicklung ein – AnewSelf sollte diesen Impuls strukturiert und sicher kanalisieren (Ich-Landkarte als geführter Rahmen statt offenem Chat). Positionierung: Das Validierungsbedürfnis ist real, aber die 25 % ungesunden Muster zeigen, dass reine Bestätigung schadet – unser SDT-Ansatz (Autonomie und Kompetenz stärken statt gefallen) grenzt uns klar von sycophantischen Consumer-Chatbots ab. B2B2C: Coaches können AnewSelf als kontrollierten, begleiteten Kanal anbieten, statt dass Klienten unbegleitet zu generischen Tools greifen. DACH: Das Validierungsbedürfnis gilt auch hier, die Datenschutz-Skepsis (siehe KI-Sektion) ist sogar ausgeprägter."
+        }
+      ],
+
+      // ── 3. WISSENSCHAFT & EVIDENZ ────────────────────
+      // Keine im Juni 2026 veröffentlichte, verifizierte Primärstudie
+      // (SDT-/Coaching-Treffer älter, MH-Meta-Analysen Feb/März). → leer.
+      science: [],
+
+      // ── 4. KI & TECHNOLOGIE ──────────────────────────
+      ai: [
+        {
+          title: "APA-Survey: 89 % der Psychologen fürchten, dass KI-Chatbots Selbstschädigung fördern; 97 % sehen Risiko verstärkter Wahnvorstellungen; 94 % misstrauen dem Datenschutz der Tech-Firmen",
+          url: "https://www.apa.org/pubs/reports/chatbots-mental-health-2026",
+          source: "American Psychological Association",
+          date: "2026-06",
+          tag: "Studie",
+          relevance: 3,
+          summary: "Dieselbe APA-Erhebung (Juni 2026, n=1.200+ lizenzierte Psychologen) mit KI-Risiko-Fokus: 89 % befürchten, Chatbots könnten unbeabsichtigt Selbstschädigung fördern; 97 % sehen das Risiko, dass Chatbots negative Verhaltensweisen oder Wahnvorstellungen verstärken; 94 % misstrauen den Datenschutzpraktiken der Tech-Firmen. 39 % begegneten Patienten, die per Chatbot eine Selbstdiagnose versuchten.",
+          implication: "Produkt: Bestätigt unsere Priorität auf Sicherheitsarchitektur – Krisendetektion, Safe Messaging und eine klare Grenze unterhalb der Therapieschwelle sind Pflicht, nicht Kür. Positionierung: Die Verstärkung von Wahnvorstellungen durch Zustimmungslogik ist die zentrale Schwäche generischer Chatbots; AnewSelf kann sich als reflexionsfördernd (SDT) statt bestätigend klar abgrenzen. Timing: Die 94 % Datenschutz-Misstrauen plus die finale EU-AI-Act-Verabschiedung (siehe Regulatorik) machen nachweisbar sicheres, EU-gehostetes Design jetzt zum Verkaufsargument. DACH: Die Datenschutz-Sensibilität ist im deutschsprachigen Markt besonders hoch – ein struktureller Vorteil für unser Modell."
+        }
+      ],
+
+      // ── 5. REGULATORIK & ETHIK ───────────────────────
+      regulation: [
+        {
+          title: "EU AI Act – Digital Omnibus final angenommen: Parlament (16.06.) + Rat (29.06.) besiegeln Fristverschiebung; neues Nudification-/CSAM-Verbot ab 02.12.2026",
+          url: "https://www.dastra.eu/en/blog/digital-omnibus-on-ai-parliament-votes-deadlines-redrawn/60108",
+          source: "Dastra (Digital Omnibus Briefing)",
+          date: "2026-06-29",
+          tag: "Regulierung",
+          relevance: 3,
+          summary: "Das Europäische Parlament stimmte am 16. Juni 2026 final für den Digital Omnibus on AI, der Rat gab am 29. Juni das endgültige grüne Licht – damit ist der im Mai erzielte Deal formal beschlossen. Die Hochrisiko-Anwendungsfristen sind fixiert (eigenständige Annex-III-Systeme → 2. Dezember 2027). Neu aufgenommen in Art. 5: ein ausdrückliches Verbot von KI zur Erzeugung nicht-einvernehmlicher intimer Darstellungen und von CSAM, verbindlich ab 2. Dezember 2026. Veröffentlichung im Amtsblatt und Inkrafttreten kurz darauf.",
+          implication: "Positionierung: Mit der Rechtssicherheit (finale Fristen) kann AnewSelf jetzt einen belastbaren Compliance-Fahrplan aufsetzen, statt auf weitere Verschiebungen zu spekulieren. Produkt: Die offene Kernfrage bleibt die Hochrisiko-Klassifizierung unseres KI-gestützten Coachings (Nudge-/Empfehlungslogik) – das sollte jetzt rechtlich final geklärt werden. Timing: Zertifizierung hat bis Ende 2027 Zeit, die Klassifizierungs-Analyse aber nicht. DACH/EU: Direkt relevant für unseren Heimatmarkt – frühe, transparente Compliance wird zum Vertriebsargument gegenüber B2B-Einkäufern und datenschutzverantwortlichen Coaches."
+        },
+        {
+          title: "Rhode Island unterzeichnet drei KI-Gesetze (22.06.): Verbot von KI-Therapie ohne Lizenz + Pflicht zu Krisen-Routing (bis $15.000/Tag Bußgeld)",
+          url: "https://www.transparencycoalition.ai/news/rhode-island-enacts-four-new-ai-laws-including-a-therapy-chatbot-ban",
+          source: "Transparency Coalition",
+          date: "2026-06-22",
+          tag: "Regulierung",
+          relevance: 2,
+          summary: "Gouverneur McKee unterzeichnete am 22. Juni 2026 drei KI-Gesetze: Verbot, ohne Lizenz Therapie oder Psychotherapie via KI anzubieten, sowie das Verbot, dass KI emotionale Bindung simuliert. Chatbot-Betreiber müssen Protokolle zur Erkennung von Suizid-/Selbstschädigungs-Äußerungen einbauen und Nutzer aktiv zu Krisendiensten (Hotlines, Krisen-SMS) routen – bei Verstoß bis zu 15.000 USD pro Tag. Ab 1. Juli 2027 gilt eine jährliche Berichtspflicht gegenüber der Staatsanwaltschaft.",
+          implication: "Produkt: Krisen-Detektion und Eskalations-Routing werden auch außerhalb der EU regulatorisch erzwungen – AnewSelf sollte Safe-Messaging und Krisenhinweis-Flow als standardisiertes Kern-Feature bauen, nicht als optionales Add-on. Positionierung: Das Verbot, emotionale Bindung zu simulieren, deckt sich exakt mit unserem SDT-Ansatz (Autonomie statt para-sozialer Abhängigkeit) – Regulierungskonformität wird zum Designprinzip, das wir aktiv kommunizieren können. Timing: Der Regulierungs-Flickenteppich (Rhode Island plus EU AI Act) wächst schnell; wer Krisen-Flows jetzt sauber implementiert, ist über mehrere Märkte hinweg compliant. DACH: Das US-Recht gilt nicht direkt, aber die Anforderungen (Krisenrouting, keine Bindungssimulation) decken sich mit EU-Ethik-Erwartungen und taugen als globaler Mindeststandard."
+        }
+      ],
+
+      // ── 6. WETTBEWERB ────────────────────────────────
+      // Keine im Juni 2026 verifizierten Wettbewerber-Meldungen
+      // (Sharpist = April/Mai, CoachHub AIMY = Nov 2025, Lyra Manager
+      // Coaching = 05.05., Headspace-D2C-"Juni" unverifiziert). Alle leer.
+      competitors: {
+        "onesome":    { product: [], business: [], personal: [], press: [], financials: [] },
+        "CoachHub":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "Sharpist":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "BetterUp":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "Bunch.ai":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "PocketCoach":{ product: [], business: [], personal: [], press: [], financials: [] },
+        "Coach.me":   { product: [], business: [], personal: [], press: [], financials: [] },
+        "Headspace":  { product: [], business: [], personal: [], press: [], financials: [] }
+      }
+    }
   }
 };
 
